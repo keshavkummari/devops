@@ -1,2 +1,2 @@
-/root/devops/src/test/java/com/example/devops/DevopsApplicationTests.java
-/root/devops/src/test/java/com/example/devops/web/WelcomeControllerTest.java
+/opt/devops/src/test/java/com/example/devops/DevopsApplicationTests.java
+/opt/devops/src/test/java/com/example/devops/web/WelcomeControllerTest.java

@@ -29,12 +29,12 @@
 		<repository>
 			<id>release</id>
 			<name>releases</name>
-			<url>http://34.204.77.136:8081/artifactory/libs-release-local</url>
+			<url>http://34.228.170.189:8081/artifactory/libs-release-local</url>
 		</repository>
 		<snapshotRepository>
 			<id>snapshot</id>
 			<name>snapshots</name>
-			<url>http://34.204.77.136:8081/artifactory/libs-snapshot-local</url>
+			<url>http://34.228.170.189:8081/artifactory/libs-snapshot-local</url>
 		</snapshotRepository>
 	</distributionManagement>
 
