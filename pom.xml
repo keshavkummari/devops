@@ -28,13 +28,13 @@
 	<distributionManagement>
 		<repository>
 			<id>central</id>
-			<name>ip-172-31-89-254-releases</name>
-			<url>http://54.164.31.119:8081/artifactory/libs-release-local</url>
+			<name>releases</name>
+			<url>http://54.162.72.211:8081/artifactory/libs-release-local</url>
 		</repository>
 		<snapshotRepository>
 			<id>snapshot</id>
-			<name>ip-172-31-89-254-snapshots</name>
-			<url>http://54.164.31.119:8081/artifactory/libs-snapshot-local</url>
+			<name>snapshots</name>
+			<url>http://54.162.72.211:8081/artifactory/libs-snapshot-local</url>
 		</snapshotRepository>
 	</distributionManagement>
 
