@@ -30,10 +30,10 @@ node {
       }
    }
    stage('Deploy') {
-       sh 'curl -u jenkins:jenkins -T target/**.war "http://34.204.77.136:8080/manager/text/deploy?path=/devops&update=true"'
+       sh 'curl -u jenkins:jenkins -T target/**.war "http://54.164.31.119:8080/manager/text/deploy?path=/devops&update=true"'
    }
    stage("Smoke Test"){
-       sh "curl --retry-delay 10 --retry 5 http://34.204.77.136:8080/devops"
+       sh "curl --retry-delay 10 --retry 5 http://54.164.31.119:8080/devops"
    } 
    stage('Artifacts') {
       if (isUnix()) {
