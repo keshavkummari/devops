@@ -1,0 +1,1293 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 77070336 bytes for committing reserved memory.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_linux.cpp:2657), pid=14122, tid=0x00007f6f8a787700
+#
+# JRE version: OpenJDK Runtime Environment (8.0_181-b13) (build 1.8.0_181-b13)
+# Java VM: OpenJDK 64-Bit Server VM (25.181-b13 mixed mode linux-amd64 compressed oops)
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f6f9c159000):  VMThread [stack: 0x00007f6f8a688000,0x00007f6f8a788000] [id=14129]
+
+Stack: [0x00007f6f8a688000,0x00007f6f8a788000],  sp=0x00007f6f8a786440,  free space=1017k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xacf34d]
+V  [libjvm.so+0x4fdeca]
+V  [libjvm.so+0x8c1838]
+V  [libjvm.so+0x8bbd4e]
+V  [libjvm.so+0x934fcb]
+V  [libjvm.so+0x935ca0]
+V  [libjvm.so+0x935ffb]
+V  [libjvm.so+0x93296c]
+V  [libjvm.so+0x92beb0]
+V  [libjvm.so+0x48ac83]
+V  [libjvm.so+0xad0899]
+V  [libjvm.so+0xad56b7]
+V  [libjvm.so+0xad3fc8]
+V  [libjvm.so+0xad4499]
+V  [libjvm.so+0xad48f1]
+V  [libjvm.so+0x8beb82]
+
+VM_Operation (0x00007f6f890114d0): CollectForMetadataAllocation, mode: safepoint, requested by thread 0x00007f6f9c9e4000
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00007f6f9c9e4000 JavaThread "background-preinit" [_thread_blocked, id=14137, stack(0x00007f6f88f14000,0x00007f6f89015000)]
+  0x00007f6f9c5c7800 JavaThread "Service Thread" daemon [_thread_blocked, id=14135, stack(0x00007f6f8973e000,0x00007f6f8983f000)]
+  0x00007f6f9c4fb800 JavaThread "C1 CompilerThread1" daemon [_thread_blocked, id=14134, stack(0x00007f6f89840000,0x00007f6f89940000)]
+  0x00007f6f9c4f6000 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=14133, stack(0x00007f6f89941000,0x00007f6f89a41000)]
+  0x00007f6f9c193800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=14132, stack(0x00007f6f8a384000,0x00007f6f8a485000)]
+  0x00007f6f9c167800 JavaThread "Finalizer" daemon [_thread_blocked, id=14131, stack(0x00007f6f8a485000,0x00007f6f8a586000)]
+  0x00007f6f9c163000 JavaThread "Reference Handler" daemon [_thread_blocked, id=14130, stack(0x00007f6f8a586000,0x00007f6f8a687000)]
+  0x00007f6f9c04c800 JavaThread "main" [_thread_blocked, id=14124, stack(0x00007f6fa45fa000,0x00007f6fa46fa000)]
+
+Other Threads:
+=>0x00007f6f9c159000 VMThread [stack: 0x00007f6f8a688000,0x00007f6f8a788000] [id=14129]
+  0x00007f6f9c5c9800 WatcherThread [stack: 0x00007f6f8963e000,0x00007f6f8973e000] [id=14136]
+
+VM state:at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00007f6f9c049c30] Threads_lock - owner thread: 0x00007f6f9c159000
+[0x00007f6f9c04a130] Heap_lock - owner thread: 0x00007f6f9c9e4000
+
+Heap:
+ PSYoungGen      total 125952K, used 4085K [0x00000000ec400000, 0x00000000f4300000, 0x0000000100000000)
+  eden space 121856K, 0% used [0x00000000ec400000,0x00000000ec400000,0x00000000f3b00000)
+  from space 4096K, 99% used [0x00000000f3b00000,0x00000000f3efd518,0x00000000f3f00000)
+  to   space 4096K, 0% used [0x00000000f3f00000,0x00000000f3f00000,0x00000000f4300000)
+ ParOldGen       total 40960K, used 3437K [0x00000000c4c00000, 0x00000000c7400000, 0x00000000ec400000)
+  object space 40960K, 8% used [0x00000000c4c00000,0x00000000c4f5b540,0x00000000c7400000)
+ Metaspace       used 20898K, capacity 21054K, committed 21248K, reserved 1069056K
+  class space    used 2176K, capacity 2217K, committed 2304K, reserved 1048576K
+
+Card table byte_map: [0x00007f6fa0ebd000,0x00007f6fa1098000] byte_map_base: 0x00007f6fa0897000
+
+Marking Bits: (ParMarkBitMap*) 0x00007f6fa38b6460
+ Begin Bits: [0x00007f6f8b260000, 0x00007f6f8c130000)
+ End Bits:   [0x00007f6f8c130000, 0x00007f6f8d000000)
+
+Polling page: 0x00007f6fa4704000
+
+CodeCache: size=245760Kb used=7271Kb max_used=7285Kb free=238488Kb
+ bounds [0x00007f6f8d000000, 0x00007f6f8d730000, 0x00007f6f9c000000]
+ total_blobs=2099 nmethods=1754 adapters=259
+ compilation: enabled
+
+Compilation events (250 events):
+Event: 18.916 Thread 0x00007f6f9c4fb800 1655       2       com.sun.org.apache.xerces.internal.util.XMLAttributesImpl::setValue (27 bytes)
+Event: 18.917 Thread 0x00007f6f9c4fb800 nmethod 1655 0x00007f6f8d67aa50 code [0x00007f6f8d67abc0, 0x00007f6f8d67ad70]
+Event: 18.917 Thread 0x00007f6f9c4fb800 1656       2       com.sun.org.apache.xerces.internal.util.XMLAttributesImpl::setSpecified (11 bytes)
+Event: 18.917 Thread 0x00007f6f9c4fb800 nmethod 1656 0x00007f6f8d67ae90 code [0x00007f6f8d67b000, 0x00007f6f8d67b170]
+Event: 18.917 Thread 0x00007f6f9c4fb800 1657       2       com.sun.org.apache.xerces.internal.utils.XMLSecurityManager::isNoLimit (10 bytes)
+Event: 18.917 Thread 0x00007f6f9c4fb800 nmethod 1657 0x00007f6f8d67b290 code [0x00007f6f8d67b3e0, 0x00007f6f8d67b550]
+Event: 18.917 Thread 0x00007f6f9c4fb800 1664       2       com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy::getLocalName (11 bytes)
+Event: 18.917 Thread 0x00007f6f9c4fb800 nmethod 1664 0x00007f6f8d67b5d0 code [0x00007f6f8d67b740, 0x00007f6f8d67b8e8]
+Event: 18.917 Thread 0x00007f6f9c4fb800 1665       2       com.sun.org.apache.xerces.internal.util.XMLAttributesImpl::getLocalName (37 bytes)
+Event: 18.917 Thread 0x00007f6f9c4fb800 nmethod 1665 0x00007f6f8d67b9d0 code [0x00007f6f8d67bb40, 0x00007f6f8d67bd10]
+Event: 18.917 Thread 0x00007f6f9c4fb800 1666       2       com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy::getQName (11 bytes)
+Event: 18.917 Thread 0x00007f6f9c4fb800 nmethod 1666 0x00007f6f8d67be50 code [0x00007f6f8d67bfc0, 0x00007f6f8d67c168]
+Event: 18.917 Thread 0x00007f6f9c4fb800 1670       2       com.sun.org.apache.xerces.internal.util.XMLAttributesImpl::getQName (38 bytes)
+Event: 18.917 Thread 0x00007f6f9c4fb800 nmethod 1670 0x00007f6f8d67c250 code [0x00007f6f8d67c3c0, 0x00007f6f8d67c590]
+Event: 18.917 Thread 0x00007f6f9c4fb800 1671       2       com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy::getType (11 bytes)
+Event: 18.917 Thread 0x00007f6f9c4fb800 nmethod 1671 0x00007f6f8d67c6d0 code [0x00007f6f8d67c840, 0x00007f6f8d67ca68]
+Event: 18.917 Thread 0x00007f6f9c4fb800 1672       2       com.sun.org.apache.xerces.internal.util.XMLAttributesImpl::getType (28 bytes)
+Event: 18.918 Thread 0x00007f6f9c4fb800 nmethod 1672 0x00007f6f8d67cc50 code [0x00007f6f8d67cde0, 0x00007f6f8d67d048]
+Event: 18.918 Thread 0x00007f6f9c4fb800 1673       2       com.sun.org.apache.xerces.internal.util.XMLAttributesImpl::getReportableType (15 bytes)
+Event: 18.918 Thread 0x00007f6f9c4fb800 nmethod 1673 0x00007f6f8d67d290 code [0x00007f6f8d67d400, 0x00007f6f8d67d628]
+Event: 18.918 Thread 0x00007f6f9c4fb800 1674       2       com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy::getValue (11 bytes)
+Event: 18.918 Thread 0x00007f6f9c4fb800 nmethod 1674 0x00007f6f8d67d790 code [0x00007f6f8d67d900, 0x00007f6f8d67daa8]
+Event: 18.918 Thread 0x00007f6f9c4fb800 1658       1       java.util.concurrent.locks.ReentrantReadWriteLock::writeLock (5 bytes)
+Event: 18.918 Thread 0x00007f6f9c4fb800 nmethod 1658 0x00007f6f8d67db90 code [0x00007f6f8d67dce0, 0x00007f6f8d67ddf0]
+Event: 18.918 Thread 0x00007f6f9c4fb800 1644       2       sun.reflect.ClassFileAssembler::setStack (25 bytes)
+Event: 18.918 Thread 0x00007f6f9c4fb800 nmethod 1644 0x00007f6f8d67de50 code [0x00007f6f8d67dfa0, 0x00007f6f8d67e110]
+Event: 18.918 Thread 0x00007f6f9c4fb800 1669       1       java.util.concurrent.locks.ReentrantReadWriteLock$NonfairSync::writerShouldBlock (2 bytes)
+Event: 18.918 Thread 0x00007f6f9c4fb800 nmethod 1669 0x00007f6f8d67e190 code [0x00007f6f8d67e2e0, 0x00007f6f8d67e3f0]
+Event: 18.918 Thread 0x00007f6f9c4fb800 1642       2       sun.reflect.AccessorGenerator::sub (5 bytes)
+Event: 18.918 Thread 0x00007f6f9c4fb800 nmethod 1642 0x00007f6f8d67e450 code [0x00007f6f8d67e5a0, 0x00007f6f8d67e6d0]
+Event: 18.942 Thread 0x00007f6f9c4fb800 1688 %     3       com.sun.org.apache.xerces.internal.impl.XMLEntityScanner::skipSpaces @ 67 (350 bytes)
+Event: 18.943 Thread 0x00007f6f9c4fb800 nmethod 1688% 0x00007f6f8d67e750 code [0x00007f6f8d67e980, 0x00007f6f8d67f6a8]
+Event: 18.943 Thread 0x00007f6f9c4fb800 1682       3       com.sun.org.apache.xerces.internal.impl.XMLEntityScanner::scanLiteral (755 bytes)
+Event: 18.944 Thread 0x00007f6f9c4fb800 nmethod 1682 0x00007f6f8d67fd90 code [0x00007f6f8d680060, 0x00007f6f8d6815a8]
+Event: 18.944 Thread 0x00007f6f9c4fb800 1698 %     3       com.sun.org.apache.xerces.internal.util.SymbolTable::hash @ 13 (53 bytes)
+Event: 18.944 Thread 0x00007f6f9c4fb800 nmethod 1698% 0x00007f6f8d682150 code [0x00007f6f8d6822e0, 0x00007f6f8d682608]
+Event: 18.944 Thread 0x00007f6f9c4fb800 1696 % !   3       org.apache.tomcat.util.IntrospectionUtils::setProperty @ 140 (1356 bytes)
+Event: 18.954 Thread 0x00007f6f9c4fb800 nmethod 1696% 0x00007f6f8d682790 code [0x00007f6f8d683760, 0x00007f6f8d699a48]
+Event: 18.954 Thread 0x00007f6f9c4fb800 1699 %     3       com.sun.org.apache.xerces.internal.util.SymbolTable::addSymbol @ 44 (110 bytes)
+Event: 18.955 Thread 0x00007f6f9c4fb800 nmethod 1699% 0x00007f6f8d6a4f50 code [0x00007f6f8d6a5120, 0x00007f6f8d6a5698]
+Event: 18.955 Thread 0x00007f6f9c4fb800 1689 %     3       sun.reflect.UTF8::utf8Length @ 9 (81 bytes)
+Event: 18.955 Thread 0x00007f6f9c4fb800 nmethod 1689% 0x00007f6f8d6a5b10 code [0x00007f6f8d6a5cc0, 0x00007f6f8d6a6348]
+Event: 18.955 Thread 0x00007f6f9c4fb800 1690 % !   3       sun.reflect.UTF8::encode @ 17 (191 bytes)
+Event: 18.956 Thread 0x00007f6f9c4fb800 nmethod 1690% 0x00007f6f8d6a6610 code [0x00007f6f8d6a6800, 0x00007f6f8d6a7268]
+Event: 18.956 Thread 0x00007f6f9c4fb800 1691 %     3       sun.reflect.ClassFileAssembler::emitConstantPoolUTF8 @ 19 (50 bytes)
+Event: 18.956 Thread 0x00007f6f9c4fb800 nmethod 1691% 0x00007f6f8d6a7a10 code [0x00007f6f8d6a7c20, 0x00007f6f8d6a8348]
+Event: 18.956 Thread 0x00007f6f9c4fb800 1687       1       sun.reflect.ByteVectorImpl::getLength (7 bytes)
+Event: 18.956 Thread 0x00007f6f9c4fb800 nmethod 1687 0x00007f6f8d6a88d0 code [0x00007f6f8d6a8a20, 0x00007f6f8d6a8b30]
+Event: 18.956 Thread 0x00007f6f9c4fb800 1676       2       java.lang.Throwable::<init> (39 bytes)
+Event: 18.957 Thread 0x00007f6f9c4fb800 nmethod 1676 0x00007f6f8d6a8b90 code [0x00007f6f8d6a8d00, 0x00007f6f8d6a8f28]
+Event: 18.957 Thread 0x00007f6f9c4fb800 1679 %     3       com.sun.org.apache.xerces.internal.impl.io.UTF8Reader::read @ 113 (1443 bytes)
+Event: 18.959 Thread 0x00007f6f9c4fb800 nmethod 1679% 0x00007f6f8d6a8fd0 code [0x00007f6f8d6a9420, 0x00007f6f8d6ac118]
+Event: 18.959 Thread 0x00007f6f9c4fb800 1684       2       org.xml.sax.helpers.AttributesImpl::getLocalName (25 bytes)
+Event: 18.960 Thread 0x00007f6f9c4fb800 nmethod 1684 0x00007f6f8d6ae950 code [0x00007f6f8d6aeac0, 0x00007f6f8d6aec70]
+Event: 18.960 Thread 0x00007f6f9c4fb800 1685       2       org.apache.tomcat.util.digester.Digester::isFakeAttribute (101 bytes)
+Event: 18.960 Thread 0x00007f6f9c4fb800 nmethod 1685 0x00007f6f8d6aed50 code [0x00007f6f8d6aef00, 0x00007f6f8d6af2f8]
+Event: 18.960 Thread 0x00007f6f9c4fb800 1686       2       org.apache.tomcat.util.IntrospectionUtils::setProperty (16 bytes)
+Event: 18.960 Thread 0x00007f6f9c4fb800 nmethod 1686 0x00007f6f8d6af650 code [0x00007f6f8d6af7c0, 0x00007f6f8d6af978]
+Event: 18.960 Thread 0x00007f6f9c4fb800 1692       2       org.apache.tomcat.util.digester.ArrayStack::push (17 bytes)
+Event: 18.960 Thread 0x00007f6f9c4fb800 nmethod 1692 0x00007f6f8d6afad0 code [0x00007f6f8d6afc60, 0x00007f6f8d6aff58]
+Event: 18.960 Thread 0x00007f6f9c4fb800 1693       2       org.apache.tomcat.util.digester.ArrayStack::pop (44 bytes)
+Event: 18.960 Thread 0x00007f6f9c4fb800 nmethod 1693 0x00007f6f8d6b0210 code [0x00007f6f8d6b03a0, 0x00007f6f8d6b0668]
+Event: 18.961 Thread 0x00007f6f9c4fb800 1694       2       org.apache.tomcat.util.digester.Rule::body (12 bytes)
+Event: 18.961 Thread 0x00007f6f9c4fb800 nmethod 1694 0x00007f6f8d6b0890 code [0x00007f6f8d6b0a00, 0x00007f6f8d6b0ba8]
+Event: 18.961 Thread 0x00007f6f9c4fb800 1695       2       org.apache.tomcat.util.digester.ObjectCreateRule::$jacocoInit (52 bytes)
+Event: 18.961 Thread 0x00007f6f9c4fb800 nmethod 1695 0x00007f6f8d6b0cd0 code [0x00007f6f8d6b0e60, 0x00007f6f8d6b12b8]
+Event: 18.961 Thread 0x00007f6f9c4fb800 1683       2       org.apache.tomcat.util.modeler.ManagedBean::$jacocoInit (54 bytes)
+Event: 18.961 Thread 0x00007f6f9c4fb800 nmethod 1683 0x00007f6f8d6b14d0 code [0x00007f6f8d6b1660, 0x00007f6f8d6b1ad8]
+Event: 18.961 Thread 0x00007f6f9c4fb800 1680   !   2       com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser::characters (78 bytes)
+Event: 18.962 Thread 0x00007f6f9c4fb800 nmethod 1680 0x00007f6f8d6b1c90 code [0x00007f6f8d6b1e20, 0x00007f6f8d6b20c8]
+Event: 18.962 Thread 0x00007f6f9c4fb800 1681       2       org.apache.tomcat.util.digester.Digester::characters (98 bytes)
+Event: 18.962 Thread 0x00007f6f9c4fb800 nmethod 1681 0x00007f6f8d6b2290 code [0x00007f6f8d6b24a0, 0x00007f6f8d6b2b78]
+Event: 18.962 Thread 0x00007f6f9c4fb800 1697       1       java.util.concurrent.locks.ReentrantReadWriteLock::readLock (5 bytes)
+Event: 18.962 Thread 0x00007f6f9c4fb800 nmethod 1697 0x00007f6f8d6b3310 code [0x00007f6f8d6b3460, 0x00007f6f8d6b3570]
+Event: 18.970 Thread 0x00007f6f9c4fb800 1700       3       com.sun.org.apache.xerces.internal.impl.io.UTF8Reader::read (1443 bytes)
+Event: 18.973 Thread 0x00007f6f9c4fb800 nmethod 1700 0x00007f6f8d6b35d0 code [0x00007f6f8d6b3a20, 0x00007f6f8d6b6558]
+Event: 18.973 Thread 0x00007f6f9c4fb800 1702       2       com.sun.org.apache.xerces.internal.impl.XMLEntityScanner::scanContent (690 bytes)
+Event: 18.974 Thread 0x00007f6f9c4fb800 nmethod 1702 0x00007f6f8d6b8cd0 code [0x00007f6f8d6b8f00, 0x00007f6f8d6b9868]
+Event: 18.974 Thread 0x00007f6f9c4fb800 1703   !   2       sun.reflect.GeneratedMethodAccessor3::invoke (66 bytes)
+Event: 18.974 Thread 0x00007f6f9c4fb800 nmethod 1703 0x00007f6f8d6ba2d0 code [0x00007f6f8d6ba4a0, 0x00007f6f8d6ba998]
+Event: 18.974 Thread 0x00007f6f9c4fb800 1704   !   2       sun.reflect.GeneratedMethodAccessor4::invoke (66 bytes)
+Event: 18.974 Thread 0x00007f6f9c4fb800 nmethod 1704 0x00007f6f8d6bad50 code [0x00007f6f8d6baf20, 0x00007f6f8d6bb418]
+Event: 18.974 Thread 0x00007f6f9c4fb800 1701       2       org.apache.tomcat.util.modeler.AttributeInfo::<init> (43 bytes)
+Event: 18.975 Thread 0x00007f6f9c4fb800 nmethod 1701 0x00007f6f8d6bb7d0 code [0x00007f6f8d6bb960, 0x00007f6f8d6bbbf8]
+Event: 18.978 Thread 0x00007f6f9c4fb800 1716   !   3       org.apache.tomcat.util.IntrospectionUtils::setProperty (1356 bytes)
+Event: 18.987 Thread 0x00007f6f9c4fb800 nmethod 1716 0x00007f6f8d6bbdd0 code [0x00007f6f8d6bcd00, 0x00007f6f8d6c8828]
+Event: 18.987 Thread 0x00007f6f9c4fb800 1721       3       com.sun.org.apache.xerces.internal.impl.XMLEntityScanner::skipSpaces (350 bytes)
+Event: 18.987 Thread 0x00007f6f9c4fb800 nmethod 1721 0x00007f6f8d6d3090 code [0x00007f6f8d6d32c0, 0x00007f6f8d6d3f68]
+Event: 18.987 Thread 0x00007f6f9c4fb800 1709 %     3       com.sun.org.apache.xerces.internal.impl.XMLEntityScanner::scanName @ 144 (305 bytes)
+Event: 18.988 Thread 0x00007f6f9c4fb800 nmethod 1709% 0x00007f6f8d6d45d0 code [0x00007f6f8d6d4840, 0x00007f6f8d6d5508]
+Event: 18.988 Thread 0x00007f6f9c4fb800 1707       2       org.apache.tomcat.util.IntrospectionUtils::findMethod (332 bytes)
+Event: 19.007 Thread 0x00007f6f9c4fb800 nmethod 1707 0x00007f6f8d6d5d10 code [0x00007f6f8d6d5f00, 0x00007f6f8d6d66d8]
+Event: 19.007 Thread 0x00007f6f9c4fb800 1715   !   2       org.apache.tomcat.util.digester.Digester::updateAttributes (163 bytes)
+Event: 19.008 Thread 0x00007f6f9c4fb800 nmethod 1715 0x00007f6f8d6d6f90 code [0x00007f6f8d6d71c0, 0x00007f6f8d6d7b38]
+Event: 19.008 Thread 0x00007f6f9c4fb800 1714       2       org.xml.sax.helpers.AttributesImpl::setAttributes (134 bytes)
+Event: 19.008 Thread 0x00007f6f9c4fb800 nmethod 1714 0x00007f6f8d6d8790 code [0x00007f6f8d6d89a0, 0x00007f6f8d6d9108]
+Event: 19.008 Thread 0x00007f6f9c4fb800 1724       2       org.codehaus.groovy.reflection.CachedMethod::compareToCachedMethod (222 bytes)
+Event: 19.009 Thread 0x00007f6f9c4fb800 nmethod 1724 0x00007f6f8d6d9650 code [0x00007f6f8d6d9980, 0x00007f6f8d6da5a8]
+Event: 19.009 Thread 0x00007f6f9c4fb800 1727       2       org.codehaus.groovy.runtime.metaclass.MetaMethodIndex::$jacocoInit (54 bytes)
+Event: 19.010 Thread 0x00007f6f9c4fb800 nmethod 1727 0x00007f6f8d6dbf10 code [0x00007f6f8d6dc0a0, 0x00007f6f8d6dc518]
+Event: 19.010 Thread 0x00007f6f9c4fb800 1728       2       org.codehaus.groovy.reflection.CachedMethod::getModifiers (17 bytes)
+Event: 19.010 Thread 0x00007f6f9c4fb800 nmethod 1728 0x00007f6f8d6dc6d0 code [0x00007f6f8d6dc840, 0x00007f6f8d6dc9e8]
+Event: 19.010 Thread 0x00007f6f9c4fb800 1723       2       org.codehaus.groovy.reflection.CachedMethod::compareTo (44 bytes)
+Event: 19.010 Thread 0x00007f6f9c4fb800 nmethod 1723 0x00007f6f8d6dcb10 code [0x00007f6f8d6dcca0, 0x00007f6f8d6dcf88]
+Event: 19.010 Thread 0x00007f6f9c4fb800 1726       2       groovy.lang.MetaClassImpl::$jacocoInit (54 bytes)
+Event: 19.010 Thread 0x00007f6f9c4fb800 nmethod 1726 0x00007f6f8d6dd190 code [0x00007f6f8d6dd320, 0x00007f6f8d6dd798]
+Event: 19.010 Thread 0x00007f6f9c4fb800 1730       2       groovy.lang.MetaClassImpl$1MOPIter::$jacocoInit (52 bytes)
+Event: 19.010 Thread 0x00007f6f9c4fb800 nmethod 1730 0x00007f6f8d6dd950 code [0x00007f6f8d6ddae0, 0x00007f6f8d6ddf38]
+Event: 19.010 Thread 0x00007f6f9c4fb800 1708       2       com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy::getLength (10 bytes)
+Event: 19.011 Thread 0x00007f6f9c4fb800 nmethod 1708 0x00007f6f8d6de150 code [0x00007f6f8d6de2c0, 0x00007f6f8d6de450]
+Event: 19.011 Thread 0x00007f6f9c4fb800 1710       2       org.apache.tomcat.util.digester.Digester::getClassLoader (80 bytes)
+Event: 19.011 Thread 0x00007f6f9c4fb800 nmethod 1710 0x00007f6f8d6de510 code [0x00007f6f8d6de6e0, 0x00007f6f8d6deba8]
+Event: 19.011 Thread 0x00007f6f9c4fb800 1711   !   2       org.apache.tomcat.util.digester.Digester::peek (45 bytes)
+Event: 19.011 Thread 0x00007f6f9c4fb800 nmethod 1711 0x00007f6f8d6df0d0 code [0x00007f6f8d6df280, 0x00007f6f8d6df5f8]
+Event: 19.011 Thread 0x00007f6f9c4fb800 1712       2       org.apache.tomcat.util.digester.ArrayStack::peek (46 bytes)
+Event: 19.012 Thread 0x00007f6f9c4fb800 nmethod 1712 0x00007f6f8d6df990 code [0x00007f6f8d6dfb40, 0x00007f6f8d6dfef8]
+Event: 19.012 Thread 0x00007f6f9c4fb800 1725       2       org.apache.tomcat.util.digester.Digester::getRules (65 bytes)
+Event: 19.012 Thread 0x00007f6f9c4fb800 nmethod 1725 0x00007f6f8d6e0310 code [0x00007f6f8d6e04a0, 0x00007f6f8d6e07a8]
+Event: 19.012 Thread 0x00007f6f9c4fb800 1713       2       com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl::getCharacterData (17 bytes)
+Event: 19.012 Thread 0x00007f6f9c4fb800 nmethod 1713 0x00007f6f8d6e09d0 code [0x00007f6f8d6e0b20, 0x00007f6f8d6e0c90]
+Event: 19.012 Thread 0x00007f6f9c4fb800 1720       2       com.sun.org.apache.xerces.internal.impl.XMLEntityScanner::checkNodeCount (22 bytes)
+Event: 19.012 Thread 0x00007f6f9c4fb800 nmethod 1720 0x00007f6f8d6e0d10 code [0x00007f6f8d6e0e80, 0x00007f6f8d6e1028]
+Event: 19.012 Thread 0x00007f6f9c4fb800 1719       2       org.apache.tomcat.util.modeler.OperationInfo::$jacocoInit (52 bytes)
+Event: 19.013 Thread 0x00007f6f9c4fb800 nmethod 1719 0x00007f6f8d6e1110 code [0x00007f6f8d6e12a0, 0x00007f6f8d6e16f8]
+Event: 19.013 Thread 0x00007f6f9c4fb800 1718       2       java.lang.reflect.Constructor::newInstance (87 bytes)
+Event: 19.013 Thread 0x00007f6f9c4fb800 nmethod 1718 0x00007f6f8d6e1910 code [0x00007f6f8d6e1ae0, 0x00007f6f8d6e1e28]
+Event: 19.013 Thread 0x00007f6f9c4fb800 1717   !   2       java.lang.Class::newInstance (155 bytes)
+Event: 19.014 Thread 0x00007f6f9c4fb800 nmethod 1717 0x00007f6f8d6e2010 code [0x00007f6f8d6e2280, 0x00007f6f8d6e2b58]
+Event: 19.014 Thread 0x00007f6f9c4fb800 1706       2       com.sun.org.apache.xerces.internal.util.PropertyState::isExceptional (8 bytes)
+Event: 19.014 Thread 0x00007f6f9c4fb800 nmethod 1706 0x00007f6f8d6e3190 code [0x00007f6f8d6e32e0, 0x00007f6f8d6e3430]
+Event: 19.014 Thread 0x00007f6f9c4fb800 1729       2       groovy.lang.MetaMethod::isPrivate (34 bytes)
+Event: 19.014 Thread 0x00007f6f9c4fb800 nmethod 1729 0x00007f6f8d6e34d0 code [0x00007f6f8d6e3660, 0x00007f6f8d6e3898]
+Event: 19.042 Thread 0x00007f6f9c4fb800 1754       3       com.sun.org.apache.xerces.internal.util.SymbolTable::addSymbol (110 bytes)
+Event: 19.043 Thread 0x00007f6f9c4fb800 nmethod 1754 0x00007f6f8d6e3a50 code [0x00007f6f8d6e3c00, 0x00007f6f8d6e4098]
+Event: 19.043 Thread 0x00007f6f9c4fb800 1753       3       com.sun.org.apache.xerces.internal.impl.XMLEntityScanner::scanName (305 bytes)
+Event: 19.044 Thread 0x00007f6f9c4fb800 nmethod 1753 0x00007f6f8d6e4410 code [0x00007f6f8d6e4680, 0x00007f6f8d6e5268]
+Event: 19.044 Thread 0x00007f6f9c4fb800 1749       3       com.sun.org.apache.xerces.internal.util.SymbolTable::hash (53 bytes)
+Event: 19.044 Thread 0x00007f6f9c4fb800 nmethod 1749 0x00007f6f8d6e5a10 code [0x00007f6f8d6e5ba0, 0x00007f6f8d6e5e68]
+Event: 19.044 Thread 0x00007f6f9c4fb800 1751 %     3       java.lang.Class$MethodArray::removeByNameAndDescriptor @ 2 (42 bytes)
+Event: 19.044 Thread 0x00007f6f9c4fb800 nmethod 1751% 0x00007f6f8d6e5fd0 code [0x00007f6f8d6e6160, 0x00007f6f8d6e64f8]
+Event: 19.044 Thread 0x00007f6f9c4fb800 1736       2       org.apache.tomcat.util.digester.SetPropertiesRule::begin (518 bytes)
+Event: 19.046 Thread 0x00007f6f9c4fb800 nmethod 1736 0x00007f6f8d6e6690 code [0x00007f6f8d6e6b60, 0x00007f6f8d6e8378]
+Event: 19.046 Thread 0x00007f6f9c4fb800 1744   !   2       org.apache.tomcat.util.digester.Digester::startElement (734 bytes)
+Event: 19.049 Thread 0x00007f6f9c4fb800 nmethod 1744 0x00007f6f8d6ea550 code [0x00007f6f8d6eaaa0, 0x00007f6f8d6ecd98]
+Event: 19.049 Thread 0x00007f6f9c4fb800 1737       2       com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl::scanStartElement (446 bytes)
+Event: 19.050 Thread 0x00007f6f9c4fb800 nmethod 1737 0x00007f6f8d6f02d0 code [0x00007f6f8d6f0560, 0x00007f6f8d6f10f8]
+Event: 19.050 Thread 0x00007f6f9c4fb800 1745       2       org.apache.tomcat.util.digester.RulesBase::match (284 bytes)
+Event: 19.051 Thread 0x00007f6f9c4fb800 nmethod 1745 0x00007f6f8d6f1ad0 code [0x00007f6f8d6f1d20, 0x00007f6f8d6f2628]
+Event: 19.051 Thread 0x00007f6f9c4fb800 1738       2       com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$ElementStack::nextElement (129 bytes)
+Event: 19.051 Thread 0x00007f6f9c4fb800 nmethod 1738 0x00007f6f8d6f2fd0 code [0x00007f6f8d6f3160, 0x00007f6f8d6f3608]
+Event: 19.051 Thread 0x00007f6f9c4fb800 1739       2       com.sun.org.apache.xerces.internal.util.XMLAttributesIteratorImpl::removeAllAttributes (10 bytes)
+Event: 19.051 Thread 0x00007f6f9c4fb800 nmethod 1739 0x00007f6f8d6f38d0 code [0x00007f6f8d6f3a20, 0x00007f6f8d6f3b70]
+Event: 19.051 Thread 0x00007f6f9c4fb800 1740       2       com.sun.org.apache.xerces.internal.util.XMLAttributesImpl::removeAllAttributes (6 bytes)
+Event: 19.052 Thread 0x00007f6f9c4fb800 nmethod 1740 0x00007f6f8d6f3c10 code [0x00007f6f8d6f3d60, 0x00007f6f8d6f3eb0]
+Event: 19.052 Thread 0x00007f6f9c4fb800 1741       2       com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl::checkDepth (100 bytes)
+Event: 19.052 Thread 0x00007f6f9c4fb800 nmethod 1741 0x00007f6f8d6f3f10 code [0x00007f6f8d6f4100, 0x00007f6f8d6f4828]
+Event: 19.052 Thread 0x00007f6f9c4fb800 1742   !   2       com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser::startElement (318 bytes)
+Event: 19.053 Thread 0x00007f6f9c4fb800 nmethod 1742 0x00007f6f8d6f5010 code [0x00007f6f8d6f5240, 0x00007f6f8d6f59f8]
+Event: 19.053 Thread 0x00007f6f9c4fb800 1743       2       com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$AttributesProxy::setAttributes (6 bytes)
+Event: 19.053 Thread 0x00007f6f9c4fb800 nmethod 1743 0x00007f6f8d6f6650 code [0x00007f6f8d6f67a0, 0x00007f6f8d6f6910]
+Event: 19.053 Thread 0x00007f6f9c4fb800 1746       2       org.apache.tomcat.util.digester.RulesBase::lookup (191 bytes)
+Event: 19.057 Thread 0x00007f6f9c4fb800 nmethod 1746 0x00007f6f8d6f6990 code [0x00007f6f8d6f6bc0, 0x00007f6f8d6f7448]
+Event: 19.057 Thread 0x00007f6f9c4fb800 1760       2       org.codehaus.groovy.runtime.metaclass.MetaMethodIndex::getOrPutMethods (290 bytes)
+Event: 19.058 Thread 0x00007f6f9c4fb800 nmethod 1760 0x00007f6f8d6f7f10 code [0x00007f6f8d6f8100, 0x00007f6f8d6f88e8]
+Event: 19.058 Thread 0x00007f6f9c4fb800 1757       2       org.codehaus.groovy.runtime.metaclass.MetaMethodIndex::addMethodToList (642 bytes)
+Event: 19.059 Thread 0x00007f6f9c4fb800 nmethod 1757 0x00007f6f8d6f9150 code [0x00007f6f8d6f95a0, 0x00007f6f8d6fac18]
+Event: 19.059 Thread 0x00007f6f9c4fb800 1759       2       org.codehaus.groovy.reflection.ParameterTypes::getParameterTypes (43 bytes)
+Event: 19.060 Thread 0x00007f6f9c4fb800 nmethod 1759 0x00007f6f8d6fcf90 code [0x00007f6f8d6fd120, 0x00007f6f8d6fd378]
+Event: 19.060 Thread 0x00007f6f9c4fb800 1756       2       org.codehaus.groovy.runtime.metaclass.MetaMethodIndex::hash (40 bytes)
+Event: 19.060 Thread 0x00007f6f9c4fb800 nmethod 1756 0x00007f6f8d6fd550 code [0x00007f6f8d6fd6c0, 0x00007f6f8d6fd868]
+Event: 19.060 Thread 0x00007f6f9c4fb800 1758       2       org.codehaus.groovy.reflection.GeneratedMetaMethod::getName (13 bytes)
+Event: 19.060 Thread 0x00007f6f9c4fb800 nmethod 1758 0x00007f6f8d6fd990 code [0x00007f6f8d6fdb00, 0x00007f6f8d6fdca8]
+Event: 19.060 Thread 0x00007f6f9c4fb800 1747       2       org.apache.tomcat.util.digester.Digester::push (50 bytes)
+Event: 19.060 Thread 0x00007f6f9c4fb800 nmethod 1747 0x00007f6f8d6fddd0 code [0x00007f6f8d6fdf80, 0x00007f6f8d6fe328]
+Event: 19.060 Thread 0x00007f6f9c4fb800 1748   !   2       com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser::endElement (108 bytes)
+Event: 19.060 Thread 0x00007f6f9c4fb800 nmethod 1748 0x00007f6f8d6fe750 code [0x00007f6f8d6fe900, 0x00007f6f8d6fec18]
+Event: 19.060 Thread 0x00007f6f9c4fb800 1735       2       org.apache.tomcat.util.modeler.FeatureInfo::setType (15 bytes)
+Event: 19.061 Thread 0x00007f6f9c4fb800 nmethod 1735 0x00007f6f8d6fee90 code [0x00007f6f8d6ff000, 0x00007f6f8d6ff1c8]
+Event: 19.061 Thread 0x00007f6f9c4fb800 1734       2       com.sun.org.apache.xerces.internal.util.FeatureState::isExceptional (8 bytes)
+Event: 19.061 Thread 0x00007f6f9c4fb800 nmethod 1734 0x00007f6f8d6ff2d0 code [0x00007f6f8d6ff420, 0x00007f6f8d6ff570]
+Event: 19.061 Thread 0x00007f6f9c4fb800 1732       2       com.sun.org.apache.xerces.internal.parsers.XML11Configuration::getFeatureState0 (6 bytes)
+Event: 19.061 Thread 0x00007f6f9c4fb800 nmethod 1732 0x00007f6f8d6ff610 code [0x00007f6f8d6ff780, 0x00007f6f8d6ff8e8]
+Event: 19.061 Thread 0x00007f6f9c4fb800 1733       2       com.sun.org.apache.xerces.internal.util.ParserConfigurationSettings::getFeatureState (46 bytes)
+Event: 19.061 Thread 0x00007f6f9c4fb800 nmethod 1733 0x00007f6f8d6ff990 code [0x00007f6f8d6ffb20, 0x00007f6f8d6ffe58]
+Event: 19.061 Thread 0x00007f6f9c4fb800 1731       2       com.sun.org.apache.xerces.internal.util.ParserConfigurationSettings::getProperty (31 bytes)
+Event: 19.061 Thread 0x00007f6f9c4fb800 nmethod 1731 0x00007f6f8d700010 code [0x00007f6f8d7001a0, 0x00007f6f8d7003b8]
+Event: 19.061 Thread 0x00007f6f9c4fb800 1752       1       java.lang.reflect.Field::getModifiers (5 bytes)
+Event: 19.061 Thread 0x00007f6f9c4fb800 nmethod 1752 0x00007f6f8d700510 code [0x00007f6f8d700660, 0x00007f6f8d700770]
+Event: 19.061 Thread 0x00007f6f9c4fb800 1750       1       java.lang.reflect.Modifier::methodModifiers (4 bytes)
+Event: 19.061 Thread 0x00007f6f9c4fb800 nmethod 1750 0x00007f6f8d7007d0 code [0x00007f6f8d700920, 0x00007f6f8d700a10]
+Event: 19.061 Thread 0x00007f6f9c4fb800 1755       2       java.lang.reflect.AccessibleObject::setAccessible0 (42 bytes)
+Event: 19.062 Thread 0x00007f6f9c4fb800 nmethod 1755 0x00007f6f8d700a50 code [0x00007f6f8d700bc0, 0x00007f6f8d700e28]
+Event: 19.068 Thread 0x00007f6f9c4fb800 1764       2       groovy.lang.MetaClassImpl$1MOPIter::methodNameAction (741 bytes)
+Event: 19.070 Thread 0x00007f6f9c4fb800 nmethod 1764 0x00007f6f8d707550 code [0x00007f6f8d707940, 0x00007f6f8d709068]
+Event: 19.070 Thread 0x00007f6f9c4fb800 1766       2       java.util.Arrays::binarySearch0 (95 bytes)
+Event: 19.070 Thread 0x00007f6f9c4fb800 nmethod 1766 0x00007f6f8d70b810 code [0x00007f6f8d70b9a0, 0x00007f6f8d70bc18]
+Event: 19.070 Thread 0x00007f6f9c4fb800 1763       2       org.codehaus.groovy.runtime.metaclass.MetaMethodIndex::isMatchingMethod (123 bytes)
+Event: 19.071 Thread 0x00007f6f9c4f6000 nmethod 1663% 0x00007f6f8d70be10 code [0x00007f6f8d70c460, 0x00007f6f8d711c00]
+Event: 19.071 Thread 0x00007f6f9c4f6000 1705       4       java.lang.String::lastIndexOf (151 bytes)
+Event: 19.071 Thread 0x00007f6f9c4fb800 nmethod 1763 0x00007f6f8d706b90 code [0x00007f6f8d706d40, 0x00007f6f8d707108]
+Event: 19.071 Thread 0x00007f6f9c4fb800 1771   !   2       java.lang.Class::getTypeName (79 bytes)
+Event: 19.072 Thread 0x00007f6f9c4fb800 nmethod 1771 0x00007f6f8d706010 code [0x00007f6f8d7061e0, 0x00007f6f8d706738]
+Event: 19.072 Thread 0x00007f6f9c4fb800 1762       2       org.codehaus.groovy.reflection.GeneratedMetaMethod::getModifiers (10 bytes)
+Event: 19.072 Thread 0x00007f6f9c4fb800 nmethod 1762 0x00007f6f8d705bd0 code [0x00007f6f8d705d40, 0x00007f6f8d705ee8]
+Event: 19.072 Thread 0x00007f6f9c4fb800 1765       2       java.util.Arrays::binarySearch (10 bytes)
+Event: 19.072 Thread 0x00007f6f9c4fb800 nmethod 1765 0x00007f6f8d705810 code [0x00007f6f8d705980, 0x00007f6f8d705ae8]
+Event: 19.072 Thread 0x00007f6f9c4fb800 1767       2       java.lang.AbstractStringBuilder::append (62 bytes)
+Event: 19.072 Thread 0x00007f6f9c4fb800 nmethod 1767 0x00007f6f8d704dd0 code [0x00007f6f8d704f80, 0x00007f6f8d705458]
+Event: 19.072 Thread 0x00007f6f9c4fb800 1768       2       org.codehaus.groovy.util.FastArray::size (14 bytes)
+Event: 19.072 Thread 0x00007f6f9c4fb800 nmethod 1768 0x00007f6f8d704990 code [0x00007f6f8d704b00, 0x00007f6f8d704ca8]
+Event: 19.073 Thread 0x00007f6f9c4fb800 1770       2       org.codehaus.groovy.reflection.CachedMethod::getDeclaringClass (14 bytes)
+Event: 19.073 Thread 0x00007f6f9c4fb800 nmethod 1770 0x00007f6f8d704550 code [0x00007f6f8d7046c0, 0x00007f6f8d704868]
+Event: 19.073 Thread 0x00007f6f9c4fb800 1769       2       java.lang.StringBuilder::append (8 bytes)
+Event: 19.073 Thread 0x00007f6f9c4fb800 nmethod 1769 0x00007f6f8d7041d0 code [0x00007f6f8d704340, 0x00007f6f8d7044c8]
+Event: 19.073 Thread 0x00007f6f9c4fb800 1761       2       org.codehaus.groovy.reflection.CachedClass::getInterfaces (20 bytes)
+Event: 19.073 Thread 0x00007f6f9c4fb800 nmethod 1761 0x00007f6f8d703cd0 code [0x00007f6f8d703e60, 0x00007f6f8d704078]
+Event: 19.073 Thread 0x00007f6f9c4f6000 nmethod 1705 0x00007f6f8d7021d0 code [0x00007f6f8d702320, 0x00007f6f8d702558]
+Event: 19.073 Thread 0x00007f6f9c4f6000 1662 %     4       org.jacoco.agent.rt.internal_8ff85ea.asm.ClassReader::<init> @ 72 (257 bytes)
+Event: 19.078 Thread 0x00007f6f9c4f6000 nmethod 1662% 0x00007f6f8d700f50 code [0x00007f6f8d701300, 0x00007f6f8d701818]
+Event: 19.078 Thread 0x00007f6f9c4f6000 1643       4       sun.reflect.ByteVectorImpl::add (38 bytes)
+Event: 19.078 Thread 0x00007f6f9c4fb800 1775       2       com.sun.beans.TypeResolver::resolve (37 bytes)
+Event: 19.078 Thread 0x00007f6f9c4fb800 nmethod 1775 0x00007f6f8d701b10 code [0x00007f6f8d701c80, 0x00007f6f8d701fa8]
+Event: 19.078 Thread 0x00007f6f9c4fb800 1773       2       java.beans.Introspector::addMethod (196 bytes)
+Event: 19.079 Thread 0x00007f6f9c4fb800 nmethod 1773 0x00007f6f8d703190 code [0x00007f6f8d703380, 0x00007f6f8d7038c8]
+Event: 19.079 Thread 0x00007f6f9c4fb800 1781       2       org.codehaus.groovy.util.SingleKeyHashMap::$jacocoInit (52 bytes)
+Event: 19.079 Thread 0x00007f6f9c4f6000 nmethod 1643 0x00007f6f8d717810 code [0x00007f6f8d717960, 0x00007f6f8d717a48]
+Event: 19.079 Thread 0x00007f6f9c4f6000 1659       4       java.lang.StringBuilder::toString (17 bytes)
+Event: 19.079 Thread 0x00007f6f9c4fb800 nmethod 1781 0x00007f6f8d702990 code [0x00007f6f8d702b20, 0x00007f6f8d702f78]
+Event: 19.079 Thread 0x00007f6f9c4fb800 1776       2       java.beans.FeatureDescriptor::getClass0 (22 bytes)
+Event: 19.079 Thread 0x00007f6f9c4fb800 nmethod 1776 0x00007f6f8d71a450 code [0x00007f6f8d71a5c0, 0x00007f6f8d71a788]
+Event: 19.079 Thread 0x00007f6f9c4fb800 1774       2       java.lang.reflect.Method::hasGenericInformation (13 bytes)
+Event: 19.079 Thread 0x00007f6f9c4fb800 nmethod 1774 0x00007f6f8d71a110 code [0x00007f6f8d71a260, 0x00007f6f8d71a3d0]
+Event: 19.079 Thread 0x00007f6f9c4fb800 1780       2       org.codehaus.groovy.reflection.CachedClass::getTheClass (14 bytes)
+Event: 19.080 Thread 0x00007f6f9c4fb800 nmethod 1780 0x00007f6f8d719cd0 code [0x00007f6f8d719e40, 0x00007f6f8d719fe8]
+Event: 19.080 Thread 0x00007f6f9c4fb800 1779       2       java.beans.MethodRef::get (91 bytes)
+Event: 19.080 Thread 0x00007f6f9c4fb800 nmethod 1779 0x00007f6f8d719310 code [0x00007f6f8d7194c0, 0x00007f6f8d719968]
+Event: 19.080 Thread 0x00007f6f9c4fb800 1783       2       org.codehaus.groovy.util.ReferenceManager$CallBackedManager::$jacocoInit (52 bytes)
+Event: 19.080 Thread 0x00007f6f9c4fb800 nmethod 1783 0x00007f6f8d718b10 code [0x00007f6f8d718ca0, 0x00007f6f8d7190f8]
+Event: 19.080 Thread 0x00007f6f9c4fb800 1777       2       java.lang.Class::getTypeParameters (25 bytes)
+Event: 19.080 Thread 0x00007f6f9c4fb800 nmethod 1777 0x00007f6f8d718650 code [0x00007f6f8d7187c0, 0x00007f6f8d7189f8]
+Event: 19.081 Thread 0x00007f6f9c4fb800 1772       1       sun.reflect.generics.repository.AbstractRepository::getTree (5 bytes)
+Event: 19.081 Thread 0x00007f6f9c4fb800 nmethod 1772 0x00007f6f8d718390 code [0x00007f6f8d7184e0, 0x00007f6f8d7185f0]
+Event: 19.081 Thread 0x00007f6f9c4fb800 1778       1       java.beans.MethodDescriptor::getParamNames (5 bytes)
+Event: 19.081 Thread 0x00007f6f9c4fb800 nmethod 1778 0x00007f6f8d7180d0 code [0x00007f6f8d718220, 0x00007f6f8d718330]
+Event: 19.082 Thread 0x00007f6f9c4f6000 nmethod 1659 0x00007f6f8d71d7d0 code [0x00007f6f8d71d940, 0x00007f6f8d71dcd8]
+Event: 19.082 Thread 0x00007f6f9c4f6000 1570       4       org.jacoco.agent.rt.internal_8ff85ea.asm.Label::put (83 bytes)
+Event: 19.091 Thread 0x00007f6f9c4fb800 1785       2       java.lang.Math::min (46 bytes)
+Event: 19.091 Thread 0x00007f6f9c4fb800 nmethod 1785 0x00007f6f8d71d410 code [0x00007f6f8d71d580, 0x00007f6f8d71d750]
+Event: 19.092 Thread 0x00007f6f9c4f6000 nmethod 1570 0x00007f6f8d71a950 code [0x00007f6f8d71ab40, 0x00007f6f8d71b6c8]
+Event: 19.092 Thread 0x00007f6f9c4f6000 1784       4       org.jacoco.agent.rt.internal_8ff85ea.asm.ClassReader::copyPool (587 bytes)
+
+GC Heap History (17 events):
+Event: 0.412 GC heap before
+{Heap before GC invocations=1 (full 0):
+ PSYoungGen      total 17920K, used 15360K [0x00000000ec400000, 0x00000000ed800000, 0x0000000100000000)
+  eden space 15360K, 100% used [0x00000000ec400000,0x00000000ed300000,0x00000000ed300000)
+  from space 2560K, 0% used [0x00000000ed580000,0x00000000ed580000,0x00000000ed800000)
+  to   space 2560K, 0% used [0x00000000ed300000,0x00000000ed300000,0x00000000ed580000)
+ ParOldGen       total 40960K, used 0K [0x00000000c4c00000, 0x00000000c7400000, 0x00000000ec400000)
+  object space 40960K, 0% used [0x00000000c4c00000,0x00000000c4c00000,0x00000000c7400000)
+ Metaspace       used 4961K, capacity 5472K, committed 5760K, reserved 1056768K
+  class space    used 508K, capacity 528K, committed 640K, reserved 1048576K
+Event: 0.415 GC heap after
+Heap after GC invocations=1 (full 0):
+ PSYoungGen      total 17920K, used 1749K [0x00000000ec400000, 0x00000000ed800000, 0x0000000100000000)
+  eden space 15360K, 0% used [0x00000000ec400000,0x00000000ec400000,0x00000000ed300000)
+  from space 2560K, 68% used [0x00000000ed300000,0x00000000ed4b5788,0x00000000ed580000)
+  to   space 2560K, 0% used [0x00000000ed580000,0x00000000ed580000,0x00000000ed800000)
+ ParOldGen       total 40960K, used 8K [0x00000000c4c00000, 0x00000000c7400000, 0x00000000ec400000)
+  object space 40960K, 0% used [0x00000000c4c00000,0x00000000c4c02000,0x00000000c7400000)
+ Metaspace       used 4961K, capacity 5472K, committed 5760K, reserved 1056768K
+  class space    used 508K, capacity 528K, committed 640K, reserved 1048576K
+}
+Event: 0.689 GC heap before
+{Heap before GC invocations=2 (full 0):
+ PSYoungGen      total 17920K, used 17109K [0x00000000ec400000, 0x00000000ed800000, 0x0000000100000000)
+  eden space 15360K, 100% used [0x00000000ec400000,0x00000000ed300000,0x00000000ed300000)
+  from space 2560K, 68% used [0x00000000ed300000,0x00000000ed4b5788,0x00000000ed580000)
+  to   space 2560K, 0% used [0x00000000ed580000,0x00000000ed580000,0x00000000ed800000)
+ ParOldGen       total 40960K, used 8K [0x00000000c4c00000, 0x00000000c7400000, 0x00000000ec400000)
+  object space 40960K, 0% used [0x00000000c4c00000,0x00000000c4c02000,0x00000000c7400000)
+ Metaspace       used 7157K, capacity 7246K, committed 7424K, reserved 1056768K
+  class space    used 727K, capacity 753K, committed 768K, reserved 1048576K
+Event: 0.694 GC heap after
+Heap after GC invocations=2 (full 0):
+ PSYoungGen      total 17920K, used 1843K [0x00000000ec400000, 0x00000000ee700000, 0x0000000100000000)
+  eden space 15360K, 0% used [0x00000000ec400000,0x00000000ec400000,0x00000000ed300000)
+  from space 2560K, 72% used [0x00000000ed580000,0x00000000ed74cd70,0x00000000ed800000)
+  to   space 2560K, 0% used [0x00000000ed300000,0x00000000ed300000,0x00000000ed580000)
+ ParOldGen       total 40960K, used 8K [0x00000000c4c00000, 0x00000000c7400000, 0x00000000ec400000)
+  object space 40960K, 0% used [0x00000000c4c00000,0x00000000c4c02000,0x00000000c7400000)
+ Metaspace       used 7157K, capacity 7246K, committed 7424K, reserved 1056768K
+  class space    used 727K, capacity 753K, committed 768K, reserved 1048576K
+}
+Event: 0.840 GC heap before
+{Heap before GC invocations=3 (full 0):
+ PSYoungGen      total 17920K, used 17203K [0x00000000ec400000, 0x00000000ee700000, 0x0000000100000000)
+  eden space 15360K, 100% used [0x00000000ec400000,0x00000000ed300000,0x00000000ed300000)
+  from space 2560K, 72% used [0x00000000ed580000,0x00000000ed74cd70,0x00000000ed800000)
+  to   space 2560K, 0% used [0x00000000ed300000,0x00000000ed300000,0x00000000ed580000)
+ ParOldGen       total 40960K, used 8K [0x00000000c4c00000, 0x00000000c7400000, 0x00000000ec400000)
+  object space 40960K, 0% used [0x00000000c4c00000,0x00000000c4c02000,0x00000000c7400000)
+ Metaspace       used 8013K, capacity 8110K, committed 8320K, reserved 1056768K
+  class space    used 820K, capacity 849K, committed 896K, reserved 1048576K
+Event: 0.844 GC heap after
+Heap after GC invocations=3 (full 0):
+ PSYoungGen      total 17920K, used 1969K [0x00000000ec400000, 0x00000000ee700000, 0x0000000100000000)
+  eden space 15360K, 0% used [0x00000000ec400000,0x00000000ec400000,0x00000000ed300000)
+  from space 2560K, 76% used [0x00000000ed300000,0x00000000ed4ec628,0x00000000ed580000)
+  to   space 2560K, 0% used [0x00000000ee480000,0x00000000ee480000,0x00000000ee700000)
+ ParOldGen       total 40960K, used 8K [0x00000000c4c00000, 0x00000000c7400000, 0x00000000ec400000)
+  object space 40960K, 0% used [0x00000000c4c00000,0x00000000c4c02000,0x00000000c7400000)
+ Metaspace       used 8013K, capacity 8110K, committed 8320K, reserved 1056768K
+  class space    used 820K, capacity 849K, committed 896K, reserved 1048576K
+}
+Event: 0.975 GC heap before
+{Heap before GC invocations=4 (full 0):
+ PSYoungGen      total 17920K, used 17329K [0x00000000ec400000, 0x00000000ee700000, 0x0000000100000000)
+  eden space 15360K, 100% used [0x00000000ec400000,0x00000000ed300000,0x00000000ed300000)
+  from space 2560K, 76% used [0x00000000ed300000,0x00000000ed4ec628,0x00000000ed580000)
+  to   space 2560K, 0% used [0x00000000ee480000,0x00000000ee480000,0x00000000ee700000)
+ ParOldGen       total 40960K, used 8K [0x00000000c4c00000, 0x00000000c7400000, 0x00000000ec400000)
+  object space 40960K, 0% used [0x00000000c4c00000,0x00000000c4c02000,0x00000000c7400000)
+ Metaspace       used 8677K, capacity 8814K, committed 8960K, reserved 1056768K
+  class space    used 894K, capacity 913K, committed 1024K, reserved 1048576K
+Event: 0.980 GC heap after
+Heap after GC invocations=4 (full 0):
+ PSYoungGen      total 33280K, used 2128K [0x00000000ec400000, 0x00000000ee700000, 0x0000000100000000)
+  eden space 30720K, 0% used [0x00000000ec400000,0x00000000ec400000,0x00000000ee200000)
+  from space 2560K, 83% used [0x00000000ee480000,0x00000000ee694158,0x00000000ee700000)
+  to   space 2560K, 0% used [0x00000000ee200000,0x00000000ee200000,0x00000000ee480000)
+ ParOldGen       total 40960K, used 8K [0x00000000c4c00000, 0x00000000c7400000, 0x00000000ec400000)
+  object space 40960K, 0% used [0x00000000c4c00000,0x00000000c4c02000,0x00000000c7400000)
+ Metaspace       used 8677K, capacity 8814K, committed 8960K, reserved 1056768K
+  class space    used 894K, capacity 913K, committed 1024K, reserved 1048576K
+}
+Event: 1.220 GC heap before
+{Heap before GC invocations=5 (full 0):
+ PSYoungGen      total 33280K, used 32848K [0x00000000ec400000, 0x00000000ee700000, 0x0000000100000000)
+  eden space 30720K, 100% used [0x00000000ec400000,0x00000000ee200000,0x00000000ee200000)
+  from space 2560K, 83% used [0x00000000ee480000,0x00000000ee694158,0x00000000ee700000)
+  to   space 2560K, 0% used [0x00000000ee200000,0x00000000ee200000,0x00000000ee480000)
+ ParOldGen       total 40960K, used 8K [0x00000000c4c00000, 0x00000000c7400000, 0x00000000ec400000)
+  object space 40960K, 0% used [0x00000000c4c00000,0x00000000c4c02000,0x00000000c7400000)
+ Metaspace       used 9857K, capacity 9940K, committed 10112K, reserved 1058816K
+  class space    used 1027K, capacity 1074K, committed 1152K, reserved 1048576K
+Event: 1.229 GC heap after
+Heap after GC invocations=5 (full 0):
+ PSYoungGen      total 33280K, used 2541K [0x00000000ec400000, 0x00000000f0600000, 0x0000000100000000)
+  eden space 30720K, 0% used [0x00000000ec400000,0x00000000ec400000,0x00000000ee200000)
+  from space 2560K, 99% used [0x00000000ee200000,0x00000000ee47b540,0x00000000ee480000)
+  to   space 3072K, 0% used [0x00000000f0300000,0x00000000f0300000,0x00000000f0600000)
+ ParOldGen       total 40960K, used 355K [0x00000000c4c00000, 0x00000000c7400000, 0x00000000ec400000)
+  object space 40960K, 0% used [0x00000000c4c00000,0x00000000c4c58cc8,0x00000000c7400000)
+ Metaspace       used 9857K, capacity 9940K, committed 10112K, reserved 1058816K
+  class space    used 1027K, capacity 1074K, committed 1152K, reserved 1048576K
+}
+Event: 1.438 GC heap before
+{Heap before GC invocations=6 (full 0):
+ PSYoungGen      total 33280K, used 33261K [0x00000000ec400000, 0x00000000f0600000, 0x0000000100000000)
+  eden space 30720K, 100% used [0x00000000ec400000,0x00000000ee200000,0x00000000ee200000)
+  from space 2560K, 99% used [0x00000000ee200000,0x00000000ee47b540,0x00000000ee480000)
+  to   space 3072K, 0% used [0x00000000f0300000,0x00000000f0300000,0x00000000f0600000)
+ ParOldGen       total 40960K, used 355K [0x00000000c4c00000, 0x00000000c7400000, 0x00000000ec400000)
+  object space 40960K, 0% used [0x00000000c4c00000,0x00000000c4c58cc8,0x00000000c7400000)
+ Metaspace       used 11380K, capacity 11462K, committed 11776K, reserved 1060864K
+  class space    used 1202K, capacity 1237K, committed 1280K, reserved 1048576K
+Event: 1.446 GC heap after
+Heap after GC invocations=6 (full 0):
+ PSYoungGen      total 64000K, used 3058K [0x00000000ec400000, 0x00000000f0700000, 0x0000000100000000)
+  eden space 60928K, 0% used [0x00000000ec400000,0x00000000ec400000,0x00000000eff80000)
+  from space 3072K, 99% used [0x00000000f0300000,0x00000000f05fc968,0x00000000f0600000)
+  to   space 3584K, 0% used [0x00000000eff80000,0x00000000eff80000,0x00000000f0300000)
+ ParOldGen       total 40960K, used 453K [0x00000000c4c00000, 0x00000000c7400000, 0x00000000ec400000)
+  object space 40960K, 1% used [0x00000000c4c00000,0x00000000c4c71640,0x00000000c7400000)
+ Metaspace       used 11380K, capacity 11462K, committed 11776K, reserved 1060864K
+  class space    used 1202K, capacity 1237K, committed 1280K, reserved 1048576K
+}
+Event: 1.907 GC heap before
+{Heap before GC invocations=7 (full 0):
+ PSYoungGen      total 64000K, used 63986K [0x00000000ec400000, 0x00000000f0700000, 0x0000000100000000)
+  eden space 60928K, 100% used [0x00000000ec400000,0x00000000eff80000,0x00000000eff80000)
+  from space 3072K, 99% used [0x00000000f0300000,0x00000000f05fc968,0x00000000f0600000)
+  to   space 3584K, 0% used [0x00000000eff80000,0x00000000eff80000,0x00000000f0300000)
+ ParOldGen       total 40960K, used 453K [0x00000000c4c00000, 0x00000000c7400000, 0x00000000ec400000)
+  object space 40960K, 1% used [0x00000000c4c00000,0x00000000c4c71640,0x00000000c7400000)
+ Metaspace       used 14015K, capacity 14054K, committed 14336K, reserved 1062912K
+  class space    used 1517K, capacity 1525K, committed 1536K, reserved 1048576K
+Event: 1.918 GC heap after
+Heap after GC invocations=7 (full 0):
+ PSYoungGen      total 64512K, used 3375K [0x00000000ec400000, 0x00000000f4300000, 0x0000000100000000)
+  eden space 60928K, 0% used [0x00000000ec400000,0x00000000ec400000,0x00000000eff80000)
+  from space 3584K, 94% used [0x00000000eff80000,0x00000000f02cbd38,0x00000000f0300000)
+  to   space 4096K, 0% used [0x00000000f3f00000,0x00000000f3f00000,0x00000000f4300000)
+ ParOldGen       total 40960K, used 1667K [0x00000000c4c00000, 0x00000000c7400000, 0x00000000ec400000)
+  object space 40960K, 4% used [0x00000000c4c00000,0x00000000c4da0f78,0x00000000c7400000)
+ Metaspace       used 14015K, capacity 14054K, committed 14336K, reserved 1062912K
+  class space    used 1517K, capacity 1525K, committed 1536K, reserved 1048576K
+}
+Event: 2.646 GC heap before
+{Heap before GC invocations=8 (full 0):
+ PSYoungGen      total 64512K, used 64303K [0x00000000ec400000, 0x00000000f4300000, 0x0000000100000000)
+  eden space 60928K, 100% used [0x00000000ec400000,0x00000000eff80000,0x00000000eff80000)
+  from space 3584K, 94% used [0x00000000eff80000,0x00000000f02cbd38,0x00000000f0300000)
+  to   space 4096K, 0% used [0x00000000f3f00000,0x00000000f3f00000,0x00000000f4300000)
+ ParOldGen       total 40960K, used 1667K [0x00000000c4c00000, 0x00000000c7400000, 0x00000000ec400000)
+  object space 40960K, 4% used [0x00000000c4c00000,0x00000000c4da0f78,0x00000000c7400000)
+ Metaspace       used 16357K, capacity 16486K, committed 16640K, reserved 1064960K
+  class space    used 1735K, capacity 1781K, committed 1792K, reserved 1048576K
+Event: 2.663 GC heap after
+Heap after GC invocations=8 (full 0):
+ PSYoungGen      total 125952K, used 3591K [0x00000000ec400000, 0x00000000f4300000, 0x0000000100000000)
+  eden space 121856K, 0% used [0x00000000ec400000,0x00000000ec400000,0x00000000f3b00000)
+  from space 4096K, 87% used [0x00000000f3f00000,0x00000000f4281d20,0x00000000f4300000)
+  to   space 4096K, 0% used [0x00000000f3b00000,0x00000000f3b00000,0x00000000f3f00000)
+ ParOldGen       total 40960K, used 1971K [0x00000000c4c00000, 0x00000000c7400000, 0x00000000ec400000)
+  object space 40960K, 4% used [0x00000000c4c00000,0x00000000c4decf78,0x00000000c7400000)
+ Metaspace       used 16357K, capacity 16486K, committed 16640K, reserved 1064960K
+  class space    used 1735K, capacity 1781K, committed 1792K, reserved 1048576K
+}
+Event: 19.093 GC heap before
+{Heap before GC invocations=9 (full 0):
+ PSYoungGen      total 125952K, used 77785K [0x00000000ec400000, 0x00000000f4300000, 0x0000000100000000)
+  eden space 121856K, 60% used [0x00000000ec400000,0x00000000f0c749a8,0x00000000f3b00000)
+  from space 4096K, 87% used [0x00000000f3f00000,0x00000000f4281d20,0x00000000f4300000)
+  to   space 4096K, 0% used [0x00000000f3b00000,0x00000000f3b00000,0x00000000f3f00000)
+ ParOldGen       total 40960K, used 1971K [0x00000000c4c00000, 0x00000000c7400000, 0x00000000ec400000)
+  object space 40960K, 4% used [0x00000000c4c00000,0x00000000c4decf78,0x00000000c7400000)
+ Metaspace       used 20898K, capacity 21054K, committed 21248K, reserved 1069056K
+  class space    used 2176K, capacity 2217K, committed 2304K, reserved 1048576K
+
+Deoptimization events (35 events):
+Event: 0.416 Thread 0x00007f6f9c04c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f6f8d1c91cc method=org.jacoco.agent.rt.internal_8ff85ea.asm.Type.getType([CI)Lorg/jacoco/agent/rt/internal_8ff85ea/asm/Type; @ 181
+Event: 0.416 Thread 0x00007f6f9c04c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f6f8d1ca01c method=org.jacoco.agent.rt.internal_8ff85ea.asm.Type.getType([CI)Lorg/jacoco/agent/rt/internal_8ff85ea/asm/Type; @ 181
+Event: 0.440 Thread 0x00007f6f9c04c800 Uncommon trap: reason=null_check action=make_not_entrant pc=0x00007f6f8d15b2ac method=java.lang.String.equals(Ljava/lang/Object;)Z @ 8
+Event: 0.480 Thread 0x00007f6f9c04c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f6f8d20a2a8 method=org.jacoco.agent.rt.internal_8ff85ea.asm.ByteVector.putUTF8(Ljava/lang/String;)Lorg/jacoco/agent/rt/internal_8ff85ea/asm/ByteVector; @ 34
+Event: 0.582 Thread 0x00007f6f9c04c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f6f8d158d84 method=java.lang.String.indexOf([CII[CIII)I @ 123
+Event: 0.582 Thread 0x00007f6f9c04c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f6f8d1453a0 method=java.lang.String.indexOf([CII[CIII)I @ 123
+Event: 0.584 Thread 0x00007f6f9c04c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f6f8d1bfae8 method=sun.misc.URLClassPath.getLoader(I)Lsun/misc/URLClassPath$Loader; @ 36
+Event: 0.584 Thread 0x00007f6f9c04c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f6f8d1a407c method=sun.misc.URLClassPath.getLoader(I)Lsun/misc/URLClassPath$Loader; @ 36
+Event: 0.584 Thread 0x00007f6f9c04c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f6f8d24c934 method=sun.misc.URLClassPath$JarLoader.ensureOpen()V @ 4
+Event: 0.632 Thread 0x00007f6f9c04c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f6f8d2468d8 method=sun.misc.MetaIndex.mayContain(Ljava/lang/String;)Z @ 13
+Event: 0.806 Thread 0x00007f6f9c04c800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f6f8d2678ec method=java.util.regex.Pattern$CharProperty.match(Ljava/util/regex/Matcher;ILjava/lang/CharSequence;)Z @ 18
+Event: 0.829 Thread 0x00007f6f9c04c800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f6f8d2678ec method=java.util.regex.Pattern$CharProperty.match(Ljava/util/regex/Matcher;ILjava/lang/CharSequence;)Z @ 18
+Event: 0.868 Thread 0x00007f6f9c04c800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f6f8d2678ec method=java.util.regex.Pattern$CharProperty.match(Ljava/util/regex/Matcher;ILjava/lang/CharSequence;)Z @ 18
+Event: 0.868 Thread 0x00007f6f9c04c800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f6f8d2678ec method=java.util.regex.Pattern$CharProperty.match(Ljava/util/regex/Matcher;ILjava/lang/CharSequence;)Z @ 18
+Event: 0.929 Thread 0x00007f6f9c04c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f6f8d1bb4d8 method=org.jacoco.agent.rt.internal_8ff85ea.asm.Item.isEqualTo(Lorg/jacoco/agent/rt/internal_8ff85ea/asm/Item;)Z @ 345
+Event: 1.015 Thread 0x00007f6f9c04c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f6f8d343758 method=java.lang.String.indexOf([CII[CIII)I @ 3
+Event: 1.111 Thread 0x00007f6f9c04c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f6f8d28d338 method=java.lang.AbstractStringBuilder.append(Ljava/lang/String;)Ljava/lang/AbstractStringBuilder; @ 1
+Event: 1.115 Thread 0x00007f6f9c04c800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007f6f8d2b0420 method=org.jacoco.agent.rt.internal_8ff85ea.asm.tree.LabelNode.accept(Lorg/jacoco/agent/rt/internal_8ff85ea/asm/MethodVisitor;)V @ 5
+Event: 1.115 Thread 0x00007f6f9c04c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f6f8d20b050 method=org.jacoco.agent.rt.internal_8ff85ea.asm.MethodVisitor.visitLineNumber(ILorg/jacoco/agent/rt/internal_8ff85ea/asm/Label;)V @ 4
+Event: 1.115 Thread 0x00007f6f9c04c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f6f8d367194 method=org.jacoco.agent.rt.internal_8ff85ea.asm.MethodVisitor.visitMethodInsn(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V @ 50
+Event: 1.115 Thread 0x00007f6f9c04c800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007f6f8d2b0420 method=org.jacoco.agent.rt.internal_8ff85ea.asm.tree.LabelNode.accept(Lorg/jacoco/agent/rt/internal_8ff85ea/asm/MethodVisitor;)V @ 5
+Event: 1.206 Thread 0x00007f6f9c04c800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007f6f8d2b0420 method=org.jacoco.agent.rt.internal_8ff85ea.asm.tree.LabelNode.accept(Lorg/jacoco/agent/rt/internal_8ff85ea/asm/MethodVisitor;)V @ 5
+Event: 1.216 Thread 0x00007f6f9c04c800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007f6f8d2b0420 method=org.jacoco.agent.rt.internal_8ff85ea.asm.tree.LabelNode.accept(Lorg/jacoco/agent/rt/internal_8ff85ea/asm/MethodVisitor;)V @ 5
+Event: 1.317 Thread 0x00007f6f9c04c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f6f8d36b300 method=java.util.regex.Pattern$CharProperty.match(Ljava/util/regex/Matcher;ILjava/lang/CharSequence;)Z @ 21
+Event: 1.317 Thread 0x00007f6f9c04c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f6f8d36b0fc method=java.util.regex.Pattern$CharProperty.match(Ljava/util/regex/Matcher;ILjava/lang/CharSequence;)Z @ 40
+Event: 1.459 Thread 0x00007f6f9c04c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f6f8d411528 method=org.jacoco.agent.rt.internal_8ff85ea.asm.ClassReader.readCode(Lorg/jacoco/agent/rt/internal_8ff85ea/asm/MethodVisitor;Lorg/jacoco/agent/rt/internal_8ff85ea/asm/Context;I)V @
+Event: 1.594 Thread 0x00007f6f9c04c800 Uncommon trap: reason=range_check action=make_not_entrant pc=0x00007f6f8d475540 method=sun.reflect.generics.parser.SignatureParser.current()C @ 34
+Event: 1.838 Thread 0x00007f6f9c04c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f6f8d19fc40 method=org.jacoco.agent.rt.internal_8ff85ea.asm.ClassReader.readUTF(II[C)Ljava/lang/String; @ 77
+Event: 1.838 Thread 0x00007f6f9c04c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f6f8d160b84 method=org.jacoco.agent.rt.internal_8ff85ea.asm.ClassReader.readUTF(II[C)Ljava/lang/String; @ 77
+Event: 1.961 Thread 0x00007f6f9c9e4000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f6f8d289f14 method=org.jacoco.agent.rt.internal_8ff85ea.asm.Type.getType([CI)Lorg/jacoco/agent/rt/internal_8ff85ea/asm/Type; @ 165
+Event: 1.961 Thread 0x00007f6f9c9e4000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f6f8d28ada8 method=org.jacoco.agent.rt.internal_8ff85ea.asm.Type.getType([CI)Lorg/jacoco/agent/rt/internal_8ff85ea/asm/Type; @ 165
+Event: 1.966 Thread 0x00007f6f9c04c800 Uncommon trap: reason=null_assert action=make_not_entrant pc=0x00007f6f8d479dc8 method=java.util.zip.ZipEntry.<init>(Ljava/util/zip/ZipEntry;)V @ 70
+Event: 2.041 Thread 0x00007f6f9c9e4000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f6f8d3553ac method=org.jacoco.agent.rt.internal_8ff85ea.asm.commons.AnalyzerAdapter.pop(Ljava/lang/String;)V @ 65
+Event: 2.041 Thread 0x00007f6f9c9e4000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f6f8d526644 method=org.jacoco.agent.rt.internal_8ff85ea.asm.commons.AnalyzerAdapter.pop(Ljava/lang/String;)V @ 65
+Event: 5.272 Thread 0x00007f6f9c04c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f6f8d51d790 method=org.jacoco.agent.rt.internal_8ff85ea.asm.tree.MethodNode.accept(Lorg/jacoco/agent/rt/internal_8ff85ea/asm/MethodVisitor;)V @ 376
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (85 events):
+Event: 0.025 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.defineClass(Ljava/lang/String;[BII)Ljava/lang/Class; name or signature does not match> (0x00000000ec407cb0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64
+Event: 0.025 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.prefetchRead(Ljava/lang/Object;J)V name or signature does not match> (0x00000000ec407f98) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/s
+Event: 0.440 Thread 0x00007f6f9c04c800 Implicit null exception at 0x00007f6f8d15b0e2 to 0x00007f6f8d15b29d
+Event: 0.584 Thread 0x00007f6f9c04c800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000ecaf78c8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/prims/jvm.cpp, line 1445]
+Event: 0.584 Thread 0x00007f6f9c04c800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000ecaf7cc0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/prims/jvm.cpp, line 1445]
+Event: 0.584 Thread 0x00007f6f9c04c800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000ecafa980) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/prims/jvm.cpp, line 1445]
+Event: 0.584 Thread 0x00007f6f9c04c800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000ecafad78) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/prims/jvm.cpp, line 1445]
+Event: 0.584 Thread 0x00007f6f9c04c800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000ecafbe40) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/prims/jvm.cpp, line 1445]
+Event: 0.584 Thread 0x00007f6f9c04c800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000ecafc238) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/prims/jvm.cpp, line 1445]
+Event: 0.630 Thread 0x00007f6f9c04c800 Exception <a 'java/io/FileNotFoundException'> (0x00000000ecf777f8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/prims/jni.cpp, line 710]
+Event: 0.800 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/NoSuchMethodError': org.slf4j.impl.StaticMDCBinder.getSingleton()Lorg/slf4j/impl/StaticMDCBinder;> (0x00000000ece8a108) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/i
+Event: 1.111 Thread 0x00007f6f9c04c800 Implicit null exception at 0x00007f6f8d28cf76 to 0x00007f6f8d28d321
+Event: 1.162 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/NoClassDefFoundError': org/springframework/transaction/interceptor/TransactionAttribute> (0x00000000eda1bf10) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/classfile/s
+Event: 1.162 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/NoClassDefFoundError': org/springframework/transaction/TransactionDefinition> (0x00000000eda27518) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/classfile/systemDictio
+Event: 1.242 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ec612d60) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.243 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ec615448) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.243 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ec617aa8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.251 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ec74a9f0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.255 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ec7953b0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.255 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ec7966d0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.256 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ec7a9c68) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.256 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ec7bc9f8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.257 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ec7d78b0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.258 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ec7ee148) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.259 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ec818060) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.260 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ec81ae50) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.260 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ec82f488) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.266 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ec843d00) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.266 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ec856ac0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.267 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ec8699d0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.268 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ec87c780) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.268 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ec8938f8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.269 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ec8ac668) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.271 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ec8c3510) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.286 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ecb5fb68) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.287 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ecb72be0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.287 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ecb87620) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.351 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ed44c900) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.351 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ed44ddd0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.356 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ed4d7df0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.356 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ed4da1e8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.356 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ed4dc478) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.356 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ed4de3d0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.357 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ed4e0ef8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.357 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ed4f8638) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.358 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ed504dc8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.358 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ed506c78) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.413 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000eddd6048) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.413 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000eddd7410) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.413 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000eddd8d58) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.413 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000eddda348) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.413 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000edddb698) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.516 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000eca4d008) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.517 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000eca5f5d0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.580 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ClassNotFoundException': java/lang/ObjectCustomizer> (0x00000000ecef9678) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/classfile/systemDictionary.cpp, line 210]
+Event: 1.583 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ecf099b0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.583 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ecf0c4e0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.585 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/boot/SpringApplicationCustomizer> (0x00000000ecf2aea0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/classfile/systemDicti
+Event: 1.585 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ecf2ddb0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.585 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ecf2f340) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.585 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ecf305a8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.585 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ecf31dc8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.586 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ecf336c0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.586 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ecf34d38) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.586 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ecf38138) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.586 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ecf39480) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.586 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ecf3bb48) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.586 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ecf3fdc8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.586 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ecf42dd0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.587 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ecf44ce8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.587 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ecf47bb0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.587 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ecf49db8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.587 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ecf4c2c0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 619]
+Event: 1.594 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException': 90> (0x00000000ed046058) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp, line 369]
+Event: 1.594 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException': 80> (0x00000000ed049248) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp, line 369]
+Event: 19.023 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ClassNotFoundException': groovy/lang/ExpandoMetaClassBeanInfo> (0x00000000f07d03e0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/classfile/systemDictionary.cpp, line 
+Event: 19.023 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ClassNotFoundException': groovy/lang/MetaClassImplBeanInfo> (0x00000000f07dcc90) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/classfile/systemDictionary.cpp, line 210
+Event: 19.024 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ClassNotFoundException': java/lang/ObjectBeanInfo> (0x00000000f07e26c8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/classfile/systemDictionary.cpp, line 210]
+Event: 19.024 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ClassNotFoundException': java/lang/ObjectCustomizer> (0x00000000f07e80c8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/classfile/systemDictionary.cpp, line 210]
+Event: 19.024 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ClassNotFoundException': groovy/lang/MetaClassImplCustomizer> (0x00000000f07fa050) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/classfile/systemDictionary.cpp, line 2
+Event: 19.026 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ClassNotFoundException': groovy/lang/ExpandoMetaClassCustomizer> (0x00000000f082eb68) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/vm/classfile/systemDictionary.cpp, lin
+Event: 19.067 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/beans/factory/groovy/GroovyBeanDefinitionReaderBeanInfo> (0x00000000f097a678) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share/v
+Event: 19.067 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/beans/factory/support/AbstractBeanDefinitionReaderBeanInfo> (0x00000000f09904d8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/shar
+Event: 19.067 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/beans/factory/support/AbstractBeanDefinitionReaderCustomizer> (0x00000000f0b096c0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/sh
+Event: 19.074 Thread 0x00007f6f9c04c800 Exception <a 'java/lang/ClassNotFoundException': org/springframework/beans/factory/groovy/GroovyBeanDefinitionReaderCustomizer> (0x00000000f0b340c0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/openjdk/hotspot/src/share
+
+Events (250 events):
+Event: 18.925 loading class org/codehaus/groovy/runtime/metaclass/MissingMethodExecutionFailed done
+Event: 18.925 loading class org/codehaus/groovy/runtime/metaclass/MissingMethodExceptionNoStack
+Event: 18.925 loading class org/codehaus/groovy/runtime/metaclass/MissingMethodExceptionNoStack done
+Event: 18.925 loading class org/codehaus/groovy/control/CompilationUnit$ClassgenCallback
+Event: 18.925 loading class org/codehaus/groovy/control/CompilationUnit$ClassgenCallback done
+Event: 18.926 loading class groovy/lang/MetaClassImpl$13
+Event: 18.926 loading class groovy/lang/MetaClassImpl$13 done
+Event: 18.926 loading class groovy/lang/MetaClassImpl$Index
+Event: 18.926 loading class groovy/lang/MetaClassImpl$Index done
+Event: 18.926 loading class org/codehaus/groovy/util/SingleKeyHashMap
+Event: 18.926 loading class org/codehaus/groovy/util/SingleKeyHashMap done
+Event: 18.927 loading class groovy/lang/MetaClassImpl$MethodIndex
+Event: 18.927 loading class groovy/lang/MetaClassImpl$MethodIndex done
+Event: 18.927 loading class groovy/lang/MetaArrayLengthProperty
+Event: 18.927 loading class groovy/lang/MetaArrayLengthProperty done
+Event: 18.927 loading class groovy/lang/MetaClassImpl$DummyMetaMethod
+Event: 18.927 loading class groovy/lang/MetaClassImpl$DummyMetaMethod done
+Event: 18.928 loading class org/codehaus/groovy/util/SingleKeyHashMap$Copier
+Event: 18.928 loading class org/codehaus/groovy/util/SingleKeyHashMap$Copier done
+Event: 18.928 loading class groovy/lang/ReadOnlyPropertyException
+Event: 18.928 loading class groovy/lang/ReadOnlyPropertyException done
+Event: 18.930 Thread 0x00007f6f9c9e4000 DEOPT PACKING pc=0x00007f6f8d64181c sp=0x00007f6f890121e0
+Event: 18.930 Thread 0x00007f6f9c9e4000 DEOPT UNPACKING pc=0x00007f6f8d0474c4 sp=0x00007f6f89011f48 mode 0
+Event: 18.964 loading class groovy/lang/MetaClassImpl$1
+Event: 18.964 loading class groovy/lang/MetaClassImpl$1 done
+Event: 18.965 loading class groovy/lang/MetaClassImpl$16
+Event: 18.965 loading class groovy/lang/MetaClassImpl$16 done
+Event: 18.965 loading class groovy/lang/MetaClassImpl$17
+Event: 18.965 loading class groovy/lang/MetaClassImpl$17 done
+Event: 18.967 loading class org/codehaus/groovy/runtime/metaclass/MetaMethodIndex
+Event: 18.967 loading class org/codehaus/groovy/runtime/metaclass/MetaMethodIndex done
+Event: 18.968 loading class org/codehaus/groovy/runtime/metaclass/MetaMethodIndex$EntryIterator
+Event: 18.968 loading class org/codehaus/groovy/runtime/metaclass/MetaMethodIndex$EntryIterator done
+Event: 18.969 loading class org/codehaus/groovy/runtime/metaclass/MetaMethodIndex$Entry
+Event: 18.969 loading class org/codehaus/groovy/runtime/metaclass/MetaMethodIndex$Entry done
+Event: 18.969 loading class org/codehaus/groovy/util/SingleKeyHashMap$Entry
+Event: 18.969 loading class org/codehaus/groovy/util/SingleKeyHashMap$Entry done
+Event: 18.969 loading class org/codehaus/groovy/runtime/metaclass/MetaMethodIndex$Header
+Event: 18.969 loading class org/codehaus/groovy/runtime/metaclass/MetaMethodIndex$Header done
+Event: 18.970 loading class org/codehaus/groovy/reflection/CachedClass$2$1
+Event: 18.970 loading class org/codehaus/groovy/reflection/CachedClass$2$1 done
+Event: 18.970 loading class groovy/lang/ExpandoMetaClass$Callable
+Event: 18.970 loading class groovy/lang/ExpandoMetaClass$Callable done
+Event: 18.975 loading class org/codehaus/groovy/runtime/metaclass/MixinInstanceMetaMethod
+Event: 18.975 loading class org/codehaus/groovy/runtime/metaclass/MixinInstanceMetaMethod done
+Event: 18.976 loading class org/codehaus/groovy/reflection/CachedConstructor
+Event: 18.976 loading class org/codehaus/groovy/reflection/CachedConstructor done
+Event: 18.977 loading class org/codehaus/groovy/reflection/CachedConstructor$1
+Event: 18.977 loading class org/codehaus/groovy/reflection/CachedConstructor$1 done
+Event: 18.977 loading class org/codehaus/groovy/runtime/metaclass/ClosureMetaMethod
+Event: 18.977 loading class org/codehaus/groovy/runtime/metaclass/ClosureMetaMethod done
+Event: 18.978 loading class groovy/lang/ClosureInvokingMethod
+Event: 18.978 loading class groovy/lang/ClosureInvokingMethod done
+Event: 18.989 loading class org/codehaus/groovy/runtime/MetaClassHelper
+Event: 18.989 loading class org/codehaus/groovy/runtime/MetaClassHelper done
+Event: 18.992 loading class org/codehaus/groovy/runtime/MethodClosure
+Event: 18.992 loading class org/codehaus/groovy/runtime/MethodClosure done
+Event: 18.993 loading class org/codehaus/groovy/runtime/metaclass/MethodHelper
+Event: 18.993 loading class org/codehaus/groovy/runtime/metaclass/MethodHelper done
+Event: 18.994 loading class org/codehaus/groovy/runtime/metaclass/ClosureStaticMetaMethod
+Event: 18.994 loading class org/codehaus/groovy/runtime/metaclass/ClosureStaticMetaMethod done
+Event: 18.994 loading class org/codehaus/groovy/runtime/metaclass/ClosureMetaMethod$AnonymousMetaMethod
+Event: 18.994 loading class org/codehaus/groovy/runtime/metaclass/ClosureMetaMethod$AnonymousMetaMethod done
+Event: 18.998 loading class java/lang/reflect/AnnotatedType
+Event: 18.998 loading class java/lang/reflect/AnnotatedType done
+Event: 18.999 loading class org/codehaus/groovy/reflection/MixinInMetaClass
+Event: 18.999 loading class org/codehaus/groovy/reflection/MixinInMetaClass done
+Event: 19.001 loading class org/codehaus/groovy/runtime/callsite/CallSiteArray
+Event: 19.001 loading class org/codehaus/groovy/runtime/callsite/CallSiteArray done
+Event: 19.003 loading class groovy/lang/MetaClassImpl$1MOPIter
+Event: 19.003 loading class groovy/lang/MetaClassImpl$1MOPIter done
+Event: 19.004 loading class org/codehaus/groovy/reflection/CachedClass$CachedMethodComparatorWithString
+Event: 19.004 loading class org/codehaus/groovy/reflection/CachedClass$CachedMethodComparatorWithString done
+Event: 19.006 loading class groovy/lang/MetaClassImpl$15
+Event: 19.006 loading class groovy/lang/MetaClassImpl$15 done
+Event: 19.007 loading class java/beans/ThreadGroupContext
+Event: 19.014 loading class java/beans/ThreadGroupContext done
+Event: 19.014 loading class java/beans/ThreadGroupContext$1
+Event: 19.014 loading class java/beans/WeakIdentityMap
+Event: 19.015 loading class java/beans/WeakIdentityMap done
+Event: 19.015 loading class java/beans/ThreadGroupContext$1 done
+Event: 19.015 loading class java/beans/WeakIdentityMap$Entry
+Event: 19.015 loading class java/beans/WeakIdentityMap$Entry done
+Event: 19.016 loading class com/sun/beans/finder/BeanInfoFinder
+Event: 19.016 loading class com/sun/beans/finder/InstanceFinder
+Event: 19.016 loading class com/sun/beans/finder/InstanceFinder done
+Event: 19.016 loading class com/sun/beans/finder/BeanInfoFinder done
+Event: 19.016 loading class groovy/lang/ExpandoMetaClassBeanInfo
+Event: 19.016 loading class groovy/lang/ExpandoMetaClassBeanInfo done
+Event: 19.023 loading class groovy/lang/ExpandoMetaClassBeanInfo
+Event: 19.023 loading class groovy/lang/ExpandoMetaClassBeanInfo done
+Event: 19.023 loading class groovy/lang/ExpandoMetaClassBeanInfo
+Event: 19.023 loading class groovy/lang/ExpandoMetaClassBeanInfo done
+Event: 19.023 loading class groovy/lang/MetaClassImplBeanInfo
+Event: 19.023 loading class groovy/lang/MetaClassImplBeanInfo done
+Event: 19.023 loading class groovy/lang/MetaClassImplBeanInfo
+Event: 19.023 loading class groovy/lang/MetaClassImplBeanInfo done
+Event: 19.023 loading class groovy/lang/MetaClassImplBeanInfo
+Event: 19.023 loading class groovy/lang/MetaClassImplBeanInfo done
+Event: 19.023 loading class java/lang/ObjectBeanInfo
+Event: 19.023 loading class java/lang/ObjectBeanInfo done
+Event: 19.024 loading class java/lang/ObjectBeanInfo
+Event: 19.024 loading class java/lang/ObjectBeanInfo done
+Event: 19.024 loading class java/lang/ObjectCustomizer
+Event: 19.024 loading class java/lang/ObjectCustomizer done
+Event: 19.024 loading class java/lang/ObjectCustomizer
+Event: 19.024 loading class java/lang/ObjectCustomizer done
+Event: 19.024 loading class groovy/lang/MetaClassImplCustomizer
+Event: 19.024 loading class groovy/lang/MetaClassImplCustomizer done
+Event: 19.024 loading class groovy/lang/MetaClassImplCustomizer
+Event: 19.024 loading class groovy/lang/MetaClassImplCustomizer done
+Event: 19.024 loading class groovy/lang/MetaClassImplCustomizer
+Event: 19.024 loading class groovy/lang/MetaClassImplCustomizer done
+Event: 19.026 loading class groovy/lang/ExpandoMetaClassCustomizer
+Event: 19.026 loading class groovy/lang/ExpandoMetaClassCustomizer done
+Event: 19.026 loading class groovy/lang/ExpandoMetaClassCustomizer
+Event: 19.026 loading class groovy/lang/ExpandoMetaClassCustomizer done
+Event: 19.026 loading class groovy/lang/ExpandoMetaClassCustomizer
+Event: 19.026 loading class groovy/lang/ExpandoMetaClassCustomizer done
+Event: 19.028 loading class org/codehaus/groovy/reflection/CachedClass$1$1
+Event: 19.028 loading class org/codehaus/groovy/reflection/CachedClass$1$1 done
+Event: 19.029 loading class org/codehaus/groovy/util/ComplexKeyHashMap$1
+Event: 19.029 loading class org/codehaus/groovy/util/ComplexKeyHashMap$1 done
+Event: 19.030 loading class org/codehaus/groovy/runtime/GroovyCategorySupport
+Event: 19.030 loading class org/codehaus/groovy/runtime/GroovyCategorySupport done
+Event: 19.031 loading class org/codehaus/groovy/runtime/GroovyCategorySupport$MyThreadLocal
+Event: 19.031 loading class org/codehaus/groovy/runtime/GroovyCategorySupport$MyThreadLocal done
+Event: 19.033 loading class org/codehaus/groovy/runtime/metaclass/MetaClassRegistryImpl$1
+Event: 19.033 loading class org/codehaus/groovy/runtime/metaclass/MetaClassRegistryImpl$1 done
+Event: 19.039 Thread 0x00007f6f9c9e4000 DEOPT PACKING pc=0x00007f6f8d644c34 sp=0x00007f6f89012390
+Event: 19.039 Thread 0x00007f6f9c9e4000 DEOPT UNPACKING pc=0x00007f6f8d0474c4 sp=0x00007f6f890120b0 mode 0
+Event: 19.041 Thread 0x00007f6f9c9e4000 DEOPT PACKING pc=0x00007f6f8d648faf sp=0x00007f6f890122c0
+Event: 19.041 Thread 0x00007f6f9c9e4000 DEOPT UNPACKING pc=0x00007f6f8d0474c4 sp=0x00007f6f89012000 mode 0
+Event: 19.042 loading class javax/management/MBeanServerFactory
+Event: 19.042 loading class javax/management/MBeanServerFactory done
+Event: 19.042 loading class com/sun/jmx/mbeanserver/GetPropertyAction
+Event: 19.049 loading class com/sun/jmx/mbeanserver/GetPropertyAction done
+Event: 19.049 loading class javax/management/MBeanServerBuilder
+Event: 19.049 loading class javax/management/MBeanServerBuilder done
+Event: 19.054 loading class groovy/runtime/metaclass/org/springframework/beans/factory/groovy/GroovyBeanDefinitionReaderMetaClass
+Event: 19.054 loading class groovy/runtime/metaclass/org/springframework/beans/factory/groovy/GroovyBeanDefinitionReaderMetaClass done
+Event: 19.057 loading class org/springframework/core/io/support/EncodedResource
+Event: 19.057 loading class org/springframework/core/io/support/EncodedResource done
+Event: 19.060 loading class com/sun/jmx/mbeanserver/JmxMBeanServer
+Event: 19.062 loading class org/springframework/beans/factory/groovy/GroovyBeanDefinitionWrapper
+Event: 19.062 loading class org/springframework/beans/factory/groovy/GroovyBeanDefinitionWrapper done
+Event: 19.066 loading class org/springframework/beans/factory/groovy/GroovyBeanDefinitionReaderBeanInfo
+Event: 19.066 loading class org/springframework/beans/factory/groovy/GroovyBeanDefinitionReaderBeanInfo done
+Event: 19.067 loading class org/springframework/beans/factory/groovy/GroovyBeanDefinitionReaderBeanInfo
+Event: 19.067 loading class org/springframework/beans/factory/groovy/GroovyBeanDefinitionReaderBeanInfo done
+Event: 19.067 loading class org/springframework/beans/factory/groovy/GroovyBeanDefinitionReaderBeanInfo
+Event: 19.067 loading class org/springframework/beans/factory/groovy/GroovyBeanDefinitionReaderBeanInfo done
+Event: 19.067 loading class org/springframework/beans/factory/support/AbstractBeanDefinitionReaderBeanInfo
+Event: 19.067 loading class org/springframework/beans/factory/support/AbstractBeanDefinitionReaderBeanInfo done
+Event: 19.067 loading class org/springframework/beans/factory/support/AbstractBeanDefinitionReaderBeanInfo
+Event: 19.067 loading class org/springframework/beans/factory/support/AbstractBeanDefinitionReaderBeanInfo done
+Event: 19.067 loading class org/springframework/beans/factory/support/AbstractBeanDefinitionReaderBeanInfo
+Event: 19.067 loading class org/springframework/beans/factory/support/AbstractBeanDefinitionReaderBeanInfo done
+Event: 19.067 loading class org/springframework/beans/factory/support/AbstractBeanDefinitionReaderCustomizer
+Event: 19.067 loading class org/springframework/beans/factory/support/AbstractBeanDefinitionReaderCustomizer done
+Event: 19.067 loading class org/springframework/beans/factory/support/AbstractBeanDefinitionReaderCustomizer
+Event: 19.067 loading class org/springframework/beans/factory/support/AbstractBeanDefinitionReaderCustomizer done
+Event: 19.067 loading class org/springframework/beans/factory/support/AbstractBeanDefinitionReaderCustomizer
+Event: 19.067 loading class org/springframework/beans/factory/support/AbstractBeanDefinitionReaderCustomizer done
+Event: 19.068 loading class sun/reflect/generics/tree/IntSignature
+Event: 19.068 loading class com/sun/jmx/mbeanserver/SunJmxMBeanServer
+Event: 19.071 loading class javax/management/MBeanServer
+Event: 19.071 loading class javax/management/MBeanServerConnection
+Event: 19.071 loading class javax/management/MBeanServerConnection done
+Event: 19.071 loading class javax/management/MBeanServer done
+Event: 19.071 loading class com/sun/jmx/mbeanserver/SunJmxMBeanServer done
+Event: 19.071 loading class com/sun/jmx/mbeanserver/JmxMBeanServer done
+Event: 19.071 loading class com/sun/jmx/mbeanserver/MBeanServerDelegateImpl
+Event: 19.073 loading class sun/reflect/generics/tree/IntSignature done
+Event: 19.074 loading class org/springframework/beans/factory/groovy/GroovyBeanDefinitionReaderCustomizer
+Event: 19.074 loading class org/springframework/beans/factory/groovy/GroovyBeanDefinitionReaderCustomizer done
+Event: 19.074 loading class org/springframework/beans/factory/groovy/GroovyBeanDefinitionReaderCustomizer
+Event: 19.074 loading class org/springframework/beans/factory/groovy/GroovyBeanDefinitionReaderCustomizer done
+Event: 19.074 loading class org/springframework/beans/factory/groovy/GroovyBeanDefinitionReaderCustomizer
+Event: 19.074 loading class org/springframework/beans/factory/groovy/GroovyBeanDefinitionReaderCustomizer done
+Event: 19.077 loading class org/springframework/context/annotation/ClassPathBeanDefinitionScanner
+Event: 19.077 loading class org/springframework/context/annotation/ClassPathBeanDefinitionScanner done
+Event: 19.081 loading class javax/management/MBeanServerDelegate
+Event: 19.081 loading class javax/management/MBeanServerDelegateMBean
+Event: 19.081 loading class javax/management/MBeanServerDelegateMBean done
+Event: 19.081 loading class javax/management/NotificationEmitter
+Event: 19.081 loading class javax/management/NotificationEmitter done
+Event: 19.081 loading class javax/management/MBeanServerDelegate done
+Event: 19.081 loading class com/sun/jmx/mbeanserver/MBeanServerDelegateImpl done
+Event: 19.081 loading class javax/management/MBeanNotificationInfo
+Event: 19.081 loading class javax/management/MBeanNotificationInfo done
+Event: 19.081 loading class javax/management/MBeanInfo
+Event: 19.082 loading class javax/management/MBeanInfo done
+Event: 19.082 loading class com/sun/jmx/mbeanserver/Util
+Event: 19.082 loading class com/sun/jmx/mbeanserver/Util done
+Event: 19.082 loading class javax/management/ObjectName
+Event: 19.082 loading class javax/management/QueryExp
+Event: 19.082 loading class javax/management/QueryExp done
+Event: 19.083 loading class javax/management/ObjectName done
+Event: 19.083 loading class javax/management/ObjectName$Property
+Event: 19.083 loading class javax/management/ObjectName$Property done
+Event: 19.083 loading class javax/management/NotificationBroadcasterSupport
+Event: 19.083 loading class javax/management/NotificationBroadcasterSupport done
+Event: 19.083 loading class javax/management/NotificationBroadcasterSupport$1
+Event: 19.083 loading class javax/management/NotificationBroadcasterSupport$1 done
+Event: 19.083 loading class com/sun/jmx/remote/util/ClassLogger
+Event: 19.083 loading class com/sun/jmx/remote/util/ClassLogger done
+Event: 19.083 loading class javax/management/MBeanConstructorInfo
+Event: 19.084 loading class javax/management/MBeanConstructorInfo done
+Event: 19.084 loading class javax/management/ImmutableDescriptor
+Event: 19.084 Thread 0x00007f6f9c04c800 DEOPT PACKING pc=0x00007f6f8d2a094d sp=0x00007f6fa46f4420
+Event: 19.084 Thread 0x00007f6f9c04c800 DEOPT UNPACKING pc=0x00007f6f8d0474c4 sp=0x00007f6fa46f4238 mode 0
+Event: 19.085 loading class org/springframework/context/annotation/ConflictingBeanDefinitionException
+Event: 19.085 loading class org/springframework/context/annotation/ConflictingBeanDefinitionException done
+Event: 19.085 loading class org/springframework/beans/factory/support/BeanDefinitionDefaults
+Event: 19.085 loading class org/springframework/beans/factory/support/BeanDefinitionDefaults done
+Event: 19.086 Thread 0x00007f6f9c04c800 DEOPT PACKING pc=0x00007f6f8d29da07 sp=0x00007f6fa46f43f0
+Event: 19.086 Thread 0x00007f6f9c04c800 DEOPT UNPACKING pc=0x00007f6f8d0474c4 sp=0x00007f6fa46f4128 mode 0
+Event: 19.086 loading class javax/annotation/ManagedBean
+Event: 19.087 loading class javax/management/Descriptor
+Event: 19.087 loading class javax/management/Descriptor done
+Event: 19.087 loading class javax/management/ImmutableDescriptor done
+Event: 19.087 loading class java/util/TreeMap$EntrySet
+Event: 19.088 loading class java/util/TreeMap$EntrySet done
+Event: 19.088 loading class java/util/TreeMap$EntryIterator
+Event: 19.088 loading class java/util/TreeMap$EntryIterator done
+Event: 19.088 loading class java/util/TreeMap$KeySet
+Event: 19.089 loading class java/util/TreeMap$KeySet done
+Event: 19.089 loading class java/util/TreeMap$KeyIterator
+Event: 19.089 loading class java/util/TreeMap$KeyIterator done
+Event: 19.089 loading class com/sun/jmx/mbeanserver/ClassLoaderRepositorySupport
+Event: 19.090 loading class com/sun/jmx/mbeanserver/ModifiableClassLoaderRepository
+Event: 19.090 loading class javax/management/loading/ClassLoaderRepository
+Event: 19.090 loading class javax/management/loading/ClassLoaderRepository done
+Event: 19.090 loading class com/sun/jmx/mbeanserver/ModifiableClassLoaderRepository done
+Event: 19.090 loading class com/sun/jmx/mbeanserver/ClassLoaderRepositorySupport done
+Event: 19.090 loading class com/sun/jmx/mbeanserver/ClassLoaderRepositorySupport$LoaderEntry
+Event: 19.090 loading class com/sun/jmx/mbeanserver/ClassLoaderRepositorySupport$LoaderEntry done
+Event: 19.090 loading class com/sun/jmx/mbeanserver/MBeanInstantiator
+Event: 19.090 loading class com/sun/jmx/mbeanserver/MBeanInstantiator done
+Event: 19.090 loading class com/sun/jmx/mbeanserver/SecureClassLoaderRepository
+Event: 19.091 loading class com/sun/jmx/mbeanserver/SecureClassLoaderRepository done
+Event: 19.091 loading class com/sun/jmx/mbeanserver/JmxMBeanServer$1
+Event: 19.091 loading class com/sun/jmx/mbeanserver/JmxMBeanServer$1 done
+Event: 19.091 loading class com/sun/jmx/mbeanserver/Repository
+Event: 19.091 loading class com/sun/jmx/mbeanserver/Repository done
+Event: 19.091 loading class java/util/concurrent/locks/ReentrantReadWriteLock$FairSync
+Event: 19.091 loading class java/util/concurrent/locks/ReentrantReadWriteLock$FairSync done
+Event: 19.091 loading class com/sun/jmx/interceptor/DefaultMBeanServerInterceptor
+Event: 19.093 Executing VM operation: CollectForMetadataAllocation
+
+
+Dynamic libraries:
+00400000-00401000 r-xp 00000000 ca:02 20975318                           /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/jre/bin/java
+00600000-00601000 r--p 00000000 ca:02 20975318                           /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/jre/bin/java
+00601000-00602000 rw-p 00001000 ca:02 20975318                           /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/jre/bin/java
+011c9000-011ea000 rw-p 00000000 00:00 0                                  [heap]
+c4c00000-c7400000 rw-p 00000000 00:00 0 
+c7400000-ec400000 ---p 00000000 00:00 0 
+ec400000-f4300000 rw-p 00000000 00:00 0 
+f8c80000-100000000 ---p 00000000 00:00 0 
+100000000-100240000 rw-p 00000000 00:00 0 
+100240000-140000000 ---p 00000000 00:00 0 
+7f6f50000000-7f6f50183000 rw-p 00000000 00:00 0 
+7f6f50183000-7f6f54000000 ---p 00000000 00:00 0 
+7f6f58000000-7f6f58021000 rw-p 00000000 00:00 0 
+7f6f58021000-7f6f5c000000 ---p 00000000 00:00 0 
+7f6f5c000000-7f6f5c021000 rw-p 00000000 00:00 0 
+7f6f5c021000-7f6f60000000 ---p 00000000 00:00 0 
+7f6f60000000-7f6f61f18000 rw-p 00000000 00:00 0 
+7f6f61f18000-7f6f64000000 ---p 00000000 00:00 0 
+7f6f64000000-7f6f648e1000 rw-p 00000000 00:00 0 
+7f6f648e1000-7f6f68000000 ---p 00000000 00:00 0 
+7f6f68000000-7f6f68021000 rw-p 00000000 00:00 0 
+7f6f68021000-7f6f6c000000 ---p 00000000 00:00 0 
+7f6f6dad7000-7f6f74000000 r--p 00000000 ca:02 8422996                    /usr/lib/locale/locale-archive
+7f6f74000000-7f6f74021000 rw-p 00000000 00:00 0 
+7f6f74021000-7f6f78000000 ---p 00000000 00:00 0 
+7f6f78000000-7f6f78021000 rw-p 00000000 00:00 0 
+7f6f78021000-7f6f7c000000 ---p 00000000 00:00 0 
+7f6f7c000000-7f6f7c021000 rw-p 00000000 00:00 0 
+7f6f7c021000-7f6f80000000 ---p 00000000 00:00 0 
+7f6f80000000-7f6f80021000 rw-p 00000000 00:00 0 
+7f6f80021000-7f6f84000000 ---p 00000000 00:00 0 
+7f6f84000000-7f6f84021000 rw-p 00000000 00:00 0 
+7f6f84021000-7f6f88000000 ---p 00000000 00:00 0 
+7f6f88714000-7f6f88794000 rw-p 00000000 00:00 0 
+7f6f88794000-7f6f88914000 ---p 00000000 00:00 0 
+7f6f88914000-7f6f88b14000 rw-p 00000000 00:00 0 
+7f6f88b14000-7f6f88d14000 rw-p 00000000 00:00 0 
+7f6f88d14000-7f6f88f14000 rw-p 00000000 00:00 0 
+7f6f88f14000-7f6f88f17000 ---p 00000000 00:00 0 
+7f6f88f17000-7f6f89215000 rw-p 00000000 00:00 0 
+7f6f89233000-7f6f8923c000 r-xp 00000000 ca:02 629239                     /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/jre/lib/amd64/libmanagement.so
+7f6f8923c000-7f6f8943b000 ---p 00009000 ca:02 629239                     /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/jre/lib/amd64/libmanagement.so
+7f6f8943b000-7f6f8943c000 r--p 00008000 ca:02 629239                     /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/jre/lib/amd64/libmanagement.so
+7f6f8943c000-7f6f8943d000 rw-p 00009000 ca:02 629239                     /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/jre/lib/amd64/libmanagement.so
+7f6f8943d000-7f6f8963d000 rw-p 00000000 00:00 0 
+7f6f8963d000-7f6f8963e000 ---p 00000000 00:00 0 
+7f6f8963e000-7f6f8973e000 rw-p 00000000 00:00 0 
+7f6f8973e000-7f6f89741000 ---p 00000000 00:00 0 
+7f6f89741000-7f6f8983f000 rw-p 00000000 00:00 0 
+7f6f8983f000-7f6f89843000 ---p 00000000 00:00 0 
+7f6f89843000-7f6f89940000 rw-p 00000000 00:00 0 
+7f6f89940000-7f6f89944000 ---p 00000000 00:00 0 
+7f6f89944000-7f6f89a41000 rw-p 00000000 00:00 0 
+7f6f89a41000-7f6f89a53000 r-xp 00000000 ca:02 629242                     /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/jre/lib/amd64/libnio.so
+7f6f89a53000-7f6f89c52000 ---p 00012000 ca:02 629242                     /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/jre/lib/amd64/libnio.so
+7f6f89c52000-7f6f89c53000 r--p 00011000 ca:02 629242                     /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/jre/lib/amd64/libnio.so
+7f6f89c53000-7f6f89c54000 rw-p 00012000 ca:02 629242                     /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/jre/lib/amd64/libnio.so
+7f6f89c54000-7f6f89c6a000 r-xp 00000000 ca:02 50820                      /usr/lib64/libresolv-2.17.so
+7f6f89c6a000-7f6f89e69000 ---p 00016000 ca:02 50820                      /usr/lib64/libresolv-2.17.so
+7f6f89e69000-7f6f89e6a000 r--p 00015000 ca:02 50820                      /usr/lib64/libresolv-2.17.so
+7f6f89e6a000-7f6f89e6b000 rw-p 00016000 ca:02 50820                      /usr/lib64/libresolv-2.17.so
+7f6f89e6b000-7f6f89e6d000 rw-p 00000000 00:00 0 
+7f6f89e6d000-7f6f89e72000 r-xp 00000000 ca:02 50808                      /usr/lib64/libnss_dns-2.17.so
+7f6f89e72000-7f6f8a072000 ---p 00005000 ca:02 50808                      /usr/lib64/libnss_dns-2.17.so
+7f6f8a072000-7f6f8a073000 r--p 00005000 ca:02 50808                      /usr/lib64/libnss_dns-2.17.so
+7f6f8a073000-7f6f8a074000 rw-p 00006000 ca:02 50808                      /usr/lib64/libnss_dns-2.17.so
+7f6f8a079000-7f6f8a07a000 rw-p 00000000 00:00 0 
+7f6f8a07a000-7f6f8a091000 r-xp 00000000 ca:02 629241                     /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/jre/lib/amd64/libnet.so
+7f6f8a091000-7f6f8a290000 ---p 00017000 ca:02 629241                     /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/jre/lib/amd64/libnet.so
+7f6f8a290000-7f6f8a291000 r--p 00016000 ca:02 629241                     /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/jre/lib/amd64/libnet.so
+7f6f8a291000-7f6f8a292000 rw-p 00017000 ca:02 629241                     /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/jre/lib/amd64/libnet.so
+7f6f8a292000-7f6f8a298000 r--s 0003a000 ca:02 9215039                    /root/.m2/repository/org/jacoco/org.jacoco.agent/0.7.9/org.jacoco.agent-0.7.9-runtime.jar
+7f6f8a298000-7f6f8a29a000 r--s 0000e000 ca:02 16934283                   /root/.m2/repository/org/apache/maven/surefire/surefire-junit4/2.17/surefire-junit4-2.17.jar
+7f6f8a29a000-7f6f8a2bb000 r--s 000e5000 ca:02 25883537                   /root/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/1.5.6.RELEASE/spring-boot-autoconfigure-1.5.6.RELEASE.jar
+7f6f8a2bb000-7f6f8a2cb000 r--s 00095000 ca:02 4833657                    /root/.m2/repository/org/springframework/boot/spring-boot/1.5.6.RELEASE/spring-boot-1.5.6.RELEASE.jar
+7f6f8a2cb000-7f6f8a2d1000 r--s 0002f000 ca:02 16933584                   /root/.m2/repository/org/springframework/boot/spring-boot-devtools/1.5.6.RELEASE/spring-boot-devtools-1.5.6.RELEASE.jar
+7f6f8a2d1000-7f6f8a2df000 r--s 00085000 ca:02 9214762                    /root/.m2/repository/org/springframework/spring-test/4.3.10.RELEASE/spring-test-4.3.10.RELEASE.jar
+7f6f8a2df000-7f6f8a2f6000 r--s 000fc000 ca:02 13437521                   /root/.m2/repository/org/springframework/spring-core/4.3.10.RELEASE/spring-core-4.3.10.RELEASE.jar
+7f6f8a2f6000-7f6f8a2f7000 r--s 00004000 ca:02 952664                     /root/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar
+7f6f8a2f7000-7f6f8a2f9000 r--s 00006000 ca:02 9214760                    /root/.m2/repository/org/skyscreamer/jsonassert/1.4.0/jsonassert-1.4.0.jar
+7f6f8a2f9000-7f6f8a2fa000 r--s 0000c000 ca:02 25883535                   /root/.m2/repository/org/hamcrest/hamcrest-library/1.3/hamcrest-library-1.3.jar
+7f6f8a2fa000-7f6f8a2fc000 r--s 00009000 ca:02 13437519                   /root/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar
+7f6f8a2fc000-7f6f8a2fe000 r--s 00009000 ca:02 9214758                    /root/.m2/repository/org/objenesis/objenesis/2.1/objenesis-2.1.jar
+7f6f8a2fe000-7f6f8a31a000 r--s 00103000 ca:02 25883533                   /root/.m2/repository/org/mockito/mockito-core/1.10.19/mockito-core-1.10.19.jar
+7f6f8a31a000-7f6f8a32e000 r--s 000dc000 ca:02 4833655                    /root/.m2/repository/org/assertj/assertj-core/2.6.0/assertj-core-2.6.0.jar
+7f6f8a32e000-7f6f8a336000 r--s 00045000 ca:02 952663                     /root/.m2/repository/junit/junit/4.12/junit-4.12.jar
+7f6f8a336000-7f6f8a337000 r--s 0000c000 ca:02 952657                     /root/.m2/repository/org/ow2/asm/asm/5.0.3/asm-5.0.3.jar
+7f6f8a337000-7f6f8a339000 r--s 00012000 ca:02 4833653                    /root/.m2/repository/net/minidev/accessors-smart/1.1/accessors-smart-1.1.jar
+7f6f8a339000-7f6f8a33c000 r--s 0001b000 ca:02 25883531                   /root/.m2/repository/net/minidev/json-smart/2.2.1/json-smart-2.2.1.jar
+7f6f8a33c000-7f6f8a341000 r--s 0002e000 ca:02 9214756                    /root/.m2/repository/com/jayway/jsonpath/json-path/2.2.0/json-path-2.2.0.jar
+7f6f8a341000-7f6f8a346000 r--s 00019000 ca:02 21282482                   /root/.m2/repository/org/springframework/boot/spring-boot-test-autoconfigure/1.5.6.RELEASE/spring-boot-test-autoconfigure-1.5.6.RELEASE.jar
+7f6f8a346000-7f6f8a34a000 r--s 00020000 ca:02 13437517                   /root/.m2/repository/org/springframework/boot/spring-boot-test/1.5.6.RELEASE/spring-boot-test-1.5.6.RELEASE.jar
+7f6f8a34a000-7f6f8a34b000 r--s 00000000 ca:02 4833651                    /root/.m2/repository/org/springframework/boot/spring-boot-starter-test/1.5.6.RELEASE/spring-boot-starter-test-1.5.6.RELEASE.jar
+7f6f8a34b000-7f6f8a351000 r--s 00037000 ca:02 4833649                    /root/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/8.5.16/tomcat-embed-websocket-8.5.16.jar
+7f6f8a351000-7f6f8a356000 r--s 00036000 ca:02 25883529                   /root/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/8.5.16/tomcat-embed-el-8.5.16.jar
+7f6f8a356000-7f6f8a37f000 r--s 002c2000 ca:02 16933582                   /root/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/8.5.16/tomcat-embed-core-8.5.16.jar
+7f6f8a37f000-7f6f8a380000 r--s 00000000 ca:02 952658                     /root/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/1.5.6.RELEASE/spring-boot-starter-tomcat-1.5.6.RELEASE.jar
+7f6f8a380000-7f6f8a382000 r--s 00004000 ca:02 952656                     /root/.m2/repository/org/slf4j/log4j-over-slf4j/1.7.25/log4j-over-slf4j-1.7.25.jar
+7f6f8a382000-7f6f8a384000 r--s 00000000 ca:02 21282477                   /root/.m2/repository/org/slf4j/jul-to-slf4j/1.7.25/jul-to-slf4j-1.7.25.jar
+7f6f8a384000-7f6f8a387000 ---p 00000000 00:00 0 
+7f6f8a387000-7f6f8a485000 rw-p 00000000 00:00 0 
+7f6f8a485000-7f6f8a488000 ---p 00000000 00:00 0 
+7f6f8a488000-7f6f8a586000 rw-p 00000000 00:00 0 
+7f6f8a586000-7f6f8a589000 ---p 00000000 00:00 0 
+7f6f8a589000-7f6f8a687000 rw-p 00000000 00:00 0 
+7f6f8a687000-7f6f8a688000 ---p 00000000 00:00 0 
+7f6f8a688000-7f6f8b091000 rw-p 00000000 00:00 0 
+7f6f8b091000-7f6f8b260000 r--s 04413000 ca:02 25381892                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/jre/lib/rt.jar
+7f6f8b260000-7f6f8d000000 rw-p 00000000 00:00 0 
+7f6f8d000000-7f6f8d730000 rwxp 00000000 00:00 0 
+7f6f8d730000-7f6f9c000000 ---p 00000000 00:00 0 
+7f6f9c000000-7f6f9cb9c000 rw-p 00000000 00:00 0 
+7f6f9cb9c000-7f6fa0000000 ---p 00000000 00:00 0 
+7f6fa0000000-7f6fa0002000 r--s 00003000 ca:02 13437515                   /root/.m2/repository/org/slf4j/jcl-over-slf4j/1.7.25/jcl-over-slf4j-1.7.25.jar
+7f6fa0002000-7f6fa000d000 r--s 0006a000 ca:02 13437513                   /root/.m2/repository/ch/qos/logback/logback-core/1.1.11/logback-core-1.1.11.jar
+7f6fa000d000-7f6fa0014000 r--s 00045000 ca:02 25883527                   /root/.m2/repository/ch/qos/logback/logback-classic/1.1.11/logback-classic-1.1.11.jar
+7f6fa0014000-7f6fa0019000 r--s 0003c000 ca:02 16933580                   /root/.m2/repository/org/springframework/spring-expression/4.3.10.RELEASE/spring-expression-4.3.10.RELEASE.jar
+7f6fa0019000-7f6fa002a000 r--s 000cf000 ca:02 952654                     /root/.m2/repository/org/springframework/spring-webmvc/4.3.10.RELEASE/spring-webmvc-4.3.10.RELEASE.jar
+7f6fa002a000-7f6fa0043000 r--s 000fe000 ca:02 21282478                   /root/.m2/repository/org/springframework/spring-context/4.3.10.RELEASE/spring-context-4.3.10.RELEASE.jar
+7f6fa0043000-7f6fa0051000 r--s 000ad000 ca:02 9214523                    /root/.m2/repository/org/springframework/spring-beans/4.3.10.RELEASE/spring-beans-4.3.10.RELEASE.jar
+7f6fa0051000-7f6fa005a000 r--s 00054000 ca:02 952652                     /root/.m2/repository/org/springframework/spring-aop/4.3.10.RELEASE/spring-aop-4.3.10.RELEASE.jar
+7f6fa005a000-7f6fa006b000 r--s 000b8000 ca:02 21282476                   /root/.m2/repository/org/springframework/spring-web/4.3.10.RELEASE/spring-web-4.3.10.RELEASE.jar
+7f6fa006b000-7f6fa006f000 r--s 00042000 ca:02 13437511                   /root/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.8.9/jackson-core-2.8.9.jar
+7f6fa006f000-7f6fa0072000 r--s 0000b000 ca:02 4833645                    /root/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.8.0/jackson-annotations-2.8.0.jar
+7f6fa0072000-7f6fa0084000 r--s 0011e000 ca:02 25883525                   /root/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.8.9/jackson-databind-2.8.9.jar
+7f6fa0084000-7f6fa0095000 r--s 000a1000 ca:02 16933578                   /root/.m2/repository/org/hibernate/hibernate-validator/5.3.5.Final/hibernate-validator-5.3.5.Final.jar
+7f6fa0095000-7f6fa00e1000 r--s 0040e000 ca:02 25883523                   /root/.m2/repository/org/codehaus/groovy/groovy/2.4.12/groovy-2.4.12.jar
+7f6fa00e1000-7f6fa0b7f000 rw-p 00000000 00:00 0 
+7f6fa0b7f000-7f6fa0b80000 ---p 00000000 00:00 0 
+7f6fa0b80000-7f6fa0c80000 rw-p 00000000 00:00 0 
+7f6fa0c80000-7f6fa0c81000 ---p 00000000 00:00 0 
+7f6fa0c81000-7f6fa0d95000 rw-p 00000000 00:00 0 
+7f6fa0d95000-7f6fa0ebd000 ---p 00000000 00:00 0 
+7f6fa0ebd000-7f6fa0ed1000 rw-p 00000000 00:00 0 
+7f6fa0ed1000-7f6fa0ff9000 ---p 00000000 00:00 0 
+7f6fa0ff9000-7f6fa1039000 rw-p 00000000 00:00 0 
+7f6fa1039000-7f6fa1097000 ---p 00000000 00:00 0 
+7f6fa1097000-7f6fa10b5000 rw-p 00000000 00:00 0 
+7f6fa10b5000-7f6fa1458000 ---p 00000000 00:00 0 
+7f6fa1458000-7f6fa1460000 r-xp 00000000 ca:02 629249                     /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/jre/lib/amd64/libzip.so
+7f6fa1460000-7f6fa165f000 ---p 00008000 ca:02 629249                     /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/jre/lib/amd64/libzip.so
+7f6fa165f000-7f6fa1660000 r--p 00007000 ca:02 629249                     /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/jre/lib/amd64/libzip.so
+7f6fa1660000-7f6fa1661000 rw-p 00008000 ca:02 629249                     /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/jre/lib/amd64/libzip.so
+7f6fa1661000-7f6fa166d000 r-xp 00000000 ca:02 50810                      /usr/lib64/libnss_files-2.17.so
+7f6fa166d000-7f6fa186c000 ---p 0000c000 ca:02 50810                      /usr/lib64/libnss_files-2.17.so
+7f6fa186c000-7f6fa186d000 r--p 0000b000 ca:02 50810                      /usr/lib64/libnss_files-2.17.so
+7f6fa186d000-7f6fa186e000 rw-p 0000c000 ca:02 50810                      /usr/lib64/libnss_files-2.17.so
+7f6fa186e000-7f6fa1874000 rw-p 00000000 00:00 0 
+7f6fa1874000-7f6fa187e000 r-xp 00000000 ca:02 588601                     /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/jre/lib/amd64/libinstrument.so
+7f6fa187e000-7f6fa1a7d000 ---p 0000a000 ca:02 588601                     /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/jre/lib/amd64/libinstrument.so
+7f6fa1a7d000-7f6fa1a7e000 r--p 00009000 ca:02 588601                     /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/jre/lib/amd64/libinstrument.so
+7f6fa1a7e000-7f6fa1a7f000 rw-p 0000a000 ca:02 588601                     /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/jre/lib/amd64/libinstrument.so
+7f6fa1a7f000-7f6fa1aad000 r-xp 00000000 ca:02 588636                     /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/jre/lib/amd64/libjava.so
+7f6fa1aad000-7f6fa1cac000 ---p 0002e000 ca:02 588636                     /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/jre/lib/amd64/libjava.so
+7f6fa1cac000-7f6fa1cad000 r--p 0002d000 ca:02 588636                     /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/jre/lib/amd64/libjava.so
+7f6fa1cad000-7f6fa1caf000 rw-p 0002e000 ca:02 588636                     /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/jre/lib/amd64/libjava.so
+7f6fa1caf000-7f6fa1cbc000 r-xp 00000000 ca:02 629248                     /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/jre/lib/amd64/libverify.so
+7f6fa1cbc000-7f6fa1ebb000 ---p 0000d000 ca:02 629248                     /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/jre/lib/amd64/libverify.so
+7f6fa1ebb000-7f6fa1ebd000 r--p 0000c000 ca:02 629248                     /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/jre/lib/amd64/libverify.so
+7f6fa1ebd000-7f6fa1ebe000 rw-p 0000e000 ca:02 629248                     /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/jre/lib/amd64/libverify.so
+7f6fa1ebe000-7f6fa1ec5000 r-xp 00000000 ca:02 50822                      /usr/lib64/librt-2.17.so
+7f6fa1ec5000-7f6fa20c4000 ---p 00007000 ca:02 50822                      /usr/lib64/librt-2.17.so
+7f6fa20c4000-7f6fa20c5000 r--p 00006000 ca:02 50822                      /usr/lib64/librt-2.17.so
+7f6fa20c5000-7f6fa20c6000 rw-p 00007000 ca:02 50822                      /usr/lib64/librt-2.17.so
+7f6fa20c6000-7f6fa20db000 r-xp 00000000 ca:02 5100                       /usr/lib64/libgcc_s-4.8.5-20150702.so.1
+7f6fa20db000-7f6fa22da000 ---p 00015000 ca:02 5100                       /usr/lib64/libgcc_s-4.8.5-20150702.so.1
+7f6fa22da000-7f6fa22db000 r--p 00014000 ca:02 5100                       /usr/lib64/libgcc_s-4.8.5-20150702.so.1
+7f6fa22db000-7f6fa22dc000 rw-p 00015000 ca:02 5100                       /usr/lib64/libgcc_s-4.8.5-20150702.so.1
+7f6fa22dc000-7f6fa23dd000 r-xp 00000000 ca:02 50800                      /usr/lib64/libm-2.17.so
+7f6fa23dd000-7f6fa25dc000 ---p 00101000 ca:02 50800                      /usr/lib64/libm-2.17.so
+7f6fa25dc000-7f6fa25dd000 r--p 00100000 ca:02 50800                      /usr/lib64/libm-2.17.so
+7f6fa25dd000-7f6fa25de000 rw-p 00101000 ca:02 50800                      /usr/lib64/libm-2.17.so
+7f6fa25de000-7f6fa26c7000 r-xp 00000000 ca:02 51121                      /usr/lib64/libstdc++.so.6.0.19
+7f6fa26c7000-7f6fa28c6000 ---p 000e9000 ca:02 51121                      /usr/lib64/libstdc++.so.6.0.19
+7f6fa28c6000-7f6fa28ce000 r--p 000e8000 ca:02 51121                      /usr/lib64/libstdc++.so.6.0.19
+7f6fa28ce000-7f6fa28d0000 rw-p 000f0000 ca:02 51121                      /usr/lib64/libstdc++.so.6.0.19
+7f6fa28d0000-7f6fa28e5000 rw-p 00000000 00:00 0 
+7f6fa28e5000-7f6fa35ca000 r-xp 00000000 ca:02 12624875                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/jre/lib/amd64/server/libjvm.so
+7f6fa35ca000-7f6fa37c9000 ---p 00ce5000 ca:02 12624875                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/jre/lib/amd64/server/libjvm.so
+7f6fa37c9000-7f6fa3877000 r--p 00ce4000 ca:02 12624875                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/jre/lib/amd64/server/libjvm.so
+7f6fa3877000-7f6fa38a1000 rw-p 00d92000 ca:02 12624875                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/jre/lib/amd64/server/libjvm.so
+7f6fa38a1000-7f6fa38d3000 rw-p 00000000 00:00 0 
+7f6fa38d3000-7f6fa3a96000 r-xp 00000000 ca:02 50792                      /usr/lib64/libc-2.17.so
+7f6fa3a96000-7f6fa3c95000 ---p 001c3000 ca:02 50792                      /usr/lib64/libc-2.17.so
+7f6fa3c95000-7f6fa3c99000 r--p 001c2000 ca:02 50792                      /usr/lib64/libc-2.17.so
+7f6fa3c99000-7f6fa3c9b000 rw-p 001c6000 ca:02 50792                      /usr/lib64/libc-2.17.so
+7f6fa3c9b000-7f6fa3ca0000 rw-p 00000000 00:00 0 
+7f6fa3ca0000-7f6fa3ca2000 r-xp 00000000 ca:02 50798                      /usr/lib64/libdl-2.17.so
+7f6fa3ca2000-7f6fa3ea2000 ---p 00002000 ca:02 50798                      /usr/lib64/libdl-2.17.so
+7f6fa3ea2000-7f6fa3ea3000 r--p 00002000 ca:02 50798                      /usr/lib64/libdl-2.17.so
+7f6fa3ea3000-7f6fa3ea4000 rw-p 00003000 ca:02 50798                      /usr/lib64/libdl-2.17.so
+7f6fa3ea4000-7f6fa3eb2000 r-xp 00000000 ca:02 8938900                    /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/jre/lib/amd64/jli/libjli.so
+7f6fa3eb2000-7f6fa40b1000 ---p 0000e000 ca:02 8938900                    /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/jre/lib/amd64/jli/libjli.so
+7f6fa40b1000-7f6fa40b2000 r--p 0000d000 ca:02 8938900                    /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/jre/lib/amd64/jli/libjli.so
+7f6fa40b2000-7f6fa40b3000 rw-p 0000e000 ca:02 8938900                    /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/jre/lib/amd64/jli/libjli.so
+7f6fa40b3000-7f6fa40c8000 r-xp 00000000 ca:02 114517                     /usr/lib64/libz.so.1.2.7
+7f6fa40c8000-7f6fa42c7000 ---p 00015000 ca:02 114517                     /usr/lib64/libz.so.1.2.7
+7f6fa42c7000-7f6fa42c8000 r--p 00014000 ca:02 114517                     /usr/lib64/libz.so.1.2.7
+7f6fa42c8000-7f6fa42c9000 rw-p 00015000 ca:02 114517                     /usr/lib64/libz.so.1.2.7
+7f6fa42c9000-7f6fa42e0000 r-xp 00000000 ca:02 50818                      /usr/lib64/libpthread-2.17.so
+7f6fa42e0000-7f6fa44df000 ---p 00017000 ca:02 50818                      /usr/lib64/libpthread-2.17.so
+7f6fa44df000-7f6fa44e0000 r--p 00016000 ca:02 50818                      /usr/lib64/libpthread-2.17.so
+7f6fa44e0000-7f6fa44e1000 rw-p 00017000 ca:02 50818                      /usr/lib64/libpthread-2.17.so
+7f6fa44e1000-7f6fa44e5000 rw-p 00000000 00:00 0 
+7f6fa44e5000-7f6fa4507000 r-xp 00000000 ca:02 50785                      /usr/lib64/ld-2.17.so
+7f6fa4507000-7f6fa4508000 r--s 00000000 ca:02 4833647                    /root/.m2/repository/org/springframework/boot/spring-boot-starter-logging/1.5.6.RELEASE/spring-boot-starter-logging-1.5.6.RELEASE.jar
+7f6fa4508000-7f6fa450a000 r--s 0000e000 ca:02 9214752                    /root/.m2/repository/com/fasterxml/classmate/1.3.3/classmate-1.3.3.jar
+7f6fa450a000-7f6fa450d000 r--s 0000e000 ca:02 21282474                   /root/.m2/repository/org/jboss/logging/jboss-logging/3.3.1.Final/jboss-logging-3.3.1.Final.jar
+7f6fa450d000-7f6fa4511000 r--s 0000c000 ca:02 9214526                    /root/.m2/repository/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.jar
+7f6fa4511000-7f6fa4512000 r--s 00000000 ca:02 21282472                   /root/.m2/repository/org/springframework/boot/spring-boot-starter-web/1.5.6.RELEASE/spring-boot-starter-web-1.5.6.RELEASE.jar
+7f6fa4512000-7f6fa4515000 r--s 0001a000 ca:02 13437509                   /root/.m2/repository/nz/net/ultraq/thymeleaf/thymeleaf-layout-dialect/1.4.0/thymeleaf-layout-dialect-1.4.0.jar
+7f6fa4515000-7f6fa4517000 r--s 00009000 ca:02 25883521                   /root/.m2/repository/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar
+7f6fa4517000-7f6fa451a000 r--s 00020000 ca:02 16933576                   /root/.m2/repository/org/unbescape/unbescape/1.1.0.RELEASE/unbescape-1.1.0.RELEASE.jar
+7f6fa451a000-7f6fa4524000 r--s 000aa000 ca:02 4833643                    /root/.m2/repository/org/javassist/javassist/3.21.0-GA/javassist-3.21.0-GA.jar
+7f6fa4524000-7f6fa4527000 r--s 00035000 ca:02 4833641                    /root/.m2/repository/ognl/ognl/3.0.8/ognl-3.0.8.jar
+7f6fa4527000-7f6fa4534000 r--s 000b7000 ca:02 21282470                   /root/.m2/repository/org/thymeleaf/thymeleaf/2.1.5.RELEASE/thymeleaf-2.1.5.RELEASE.jar
+7f6fa4534000-7f6fa4537000 r--s 00034000 ca:02 13437507                   /root/.m2/repository/org/thymeleaf/thymeleaf-spring4/2.1.5.RELEASE/thymeleaf-spring4-2.1.5.RELEASE.jar
+7f6fa4537000-7f6fa453d000 r--s 0003d000 ca:02 13437505                   /root/.m2/repository/org/yaml/snakeyaml/1.17/snakeyaml-1.17.jar
+7f6fa453d000-7f6fa453e000 r--s 00000000 ca:02 25883199                   /root/.m2/repository/org/springframework/boot/spring-boot-starter/1.5.6.RELEASE/spring-boot-starter-1.5.6.RELEASE.jar
+7f6fa453e000-7f6fa4542000 r--s 00020000 ca:02 953353                     /root/.m2/repository/org/apache/maven/surefire/surefire-api/2.17/surefire-api-2.17.jar
+7f6fa4542000-7f6fa45f1000 rw-p 00000000 00:00 0 
+7f6fa45f1000-7f6fa45f9000 rw-s 00000000 ca:02 4835060                    /tmp/hsperfdata_root/14122
+7f6fa45f9000-7f6fa45fd000 ---p 00000000 00:00 0 
+7f6fa45fd000-7f6fa46ff000 rw-p 00000000 00:00 0 
+7f6fa46ff000-7f6fa4700000 r--s 00000000 ca:02 9214524                    /root/.m2/repository/org/springframework/boot/spring-boot-starter-thymeleaf/1.5.6.RELEASE/spring-boot-starter-thymeleaf-1.5.6.RELEASE.jar
+7f6fa4700000-7f6fa4702000 r--s 00008000 ca:02 9215244                    /root/.m2/repository/org/apache/maven/surefire/surefire-booter/2.17/surefire-booter-2.17.jar
+7f6fa4702000-7f6fa4703000 r--s 00001000 ca:02 953772                     /root/devops/target/surefire/surefirebooter116911368566462121.jar
+7f6fa4703000-7f6fa4704000 rw-p 00000000 00:00 0 
+7f6fa4704000-7f6fa4705000 ---p 00000000 00:00 0 
+7f6fa4705000-7f6fa4706000 rw-p 00000000 00:00 0 
+7f6fa4706000-7f6fa4707000 r--p 00021000 ca:02 50785                      /usr/lib64/ld-2.17.so
+7f6fa4707000-7f6fa4708000 rw-p 00022000 ca:02 50785                      /usr/lib64/ld-2.17.so
+7f6fa4708000-7f6fa4709000 rw-p 00000000 00:00 0 
+7ffe1f228000-7ffe1f249000 rw-p 00000000 00:00 0                          [stack]
+7ffe1f370000-7ffe1f372000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+VM Arguments:
+jvm_args: -javaagent:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.7.9/org.jacoco.agent-0.7.9-runtime.jar=destfile=/root/devops/target/jacoco.exec 
+java_command: /root/devops/target/surefire/surefirebooter116911368566462121.jar /root/devops/target/surefire/surefire1461469962382307972tmp /root/devops/target/surefire/surefire_05747768179244146328tmp
+java_class_path (initial): /root/devops/target/surefire/surefirebooter116911368566462121.jar:/root/.m2/repository/org/jacoco/org.jacoco.agent/0.7.9/org.jacoco.agent-0.7.9-runtime.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/root/bin:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/bin:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/jre/bin:/opt/maven/bin
+USERNAME=root
+SHELL=/bin/bash
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0xacfe70], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGBUS: [libjvm.so+0xacfe70], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGFPE: [libjvm.so+0x8bd000], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGPIPE: [libjvm.so+0x8bd000], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGXFSZ: [libjvm.so+0x8bd000], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGILL: [libjvm.so+0x8bd000], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGUSR1: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGUSR2: [libjvm.so+0x8bceb0], sa_mask[0]=00100000000000000000000000000000, sa_flags=SA_RESTART|SA_SIGINFO
+SIGHUP: [libjvm.so+0x8bd0c0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGINT: [libjvm.so+0x8bd0c0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGTERM: [libjvm.so+0x8bd0c0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGQUIT: [libjvm.so+0x8bd0c0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+
+
+---------------  S Y S T E M  ---------------
+
+OS:Red Hat Enterprise Linux Server release 7.5 (Maipo)
+
+uname:Linux 3.10.0-862.el7.x86_64 #1 SMP Wed Mar 21 18:14:51 EDT 2018 x86_64
+libc:glibc 2.17 NPTL 2.17 
+rlimit: STACK 8192k, CORE 0k, NPROC 14981, NOFILE 4096, AS infinity
+load average:4.41 1.27 1.17
+
+/proc/meminfo:
+MemTotal:        3879576 kB
+MemFree:          121488 kB
+MemAvailable:      31504 kB
+Buffers:               0 kB
+Cached:            53852 kB
+SwapCached:            0 kB
+Active:          3583388 kB
+Inactive:          41060 kB
+Active(anon):    3572544 kB
+Inactive(anon):    23304 kB
+Active(file):      10844 kB
+Inactive(file):    17756 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Dirty:                 0 kB
+Writeback:             0 kB
+AnonPages:       3570736 kB
+Mapped:            20760 kB
+Shmem:             25220 kB
+Slab:              66388 kB
+SReclaimable:      25812 kB
+SUnreclaim:        40576 kB
+KernelStack:        8976 kB
+PageTables:        17012 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     1939788 kB
+Committed_AS:    5035976 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:       19004 kB
+VmallocChunk:   34359709436 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:   1400832 kB
+CmaTotal:              0 kB
+CmaFree:               0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:       73728 kB
+DirectMap2M:     4120576 kB
+
+
+CPU:total 2 (initial active 2) (2 cores per cpu, 1 threads per core) family 6 model 79 stepping 1, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, lzcnt, tsc, bmi1, bmi2
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 79
+model name	: Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz
+stepping	: 1
+microcode	: 0xb00002a
+cpu MHz		: 2300.174
+cache size	: 46080 KB
+physical id	: 0
+siblings	: 2
+core id		: 0
+cpu cores	: 2
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good nopl xtopology eagerfpu pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm fsgsbase bmi1 avx2 smep bmi2 erms invpcid xsaveopt
+bogomips	: 4600.08
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 46 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 79
+model name	: Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz
+stepping	: 1
+microcode	: 0xb00002a
+cpu MHz		: 2300.174
+cache size	: 46080 KB
+physical id	: 0
+siblings	: 2
+core id		: 1
+cpu cores	: 2
+apicid		: 2
+initial apicid	: 2
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good nopl xtopology eagerfpu pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm fsgsbase bmi1 avx2 smep bmi2 erms invpcid xsaveopt
+bogomips	: 4600.08
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 46 bits physical, 48 bits virtual
+power management:
+
+
+
+Memory: 4k page, physical 3879576k(121488k free), swap 0k(0k free)
+
+vm_info: OpenJDK 64-Bit Server VM (25.181-b13) for linux-amd64 JRE (1.8.0_181-b13), built on Jul 16 2018 11:32:17 by "mockbuild" with gcc 4.8.5 20150623 (Red Hat 4.8.5-28)
+
+time: Wed Aug 22 11:03:52 2018
+elapsed time: 19 seconds (0d 0h 0m 19s)
+
