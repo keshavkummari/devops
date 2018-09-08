@@ -30,10 +30,10 @@ node {
       }
    }
    stage('Deploy') {
-       sh 'curl -u admin:redhat@123 -T target/**.war "http://54.227.220.63:8080/manager/text/deploy?path=/devops&update=true"'
+       sh 'curl -u admin:redhat@123 -T target/**.war "http://13.126.152.146:8080/manager/text/deploy?path=/devops&update=true"'
    }
    stage("Smoke Test"){
-       sh "curl --retry-delay 10 --retry 5 http://54.227.220.63:8080/devops"
+       sh "curl --retry-delay 10 --retry 5 http://13.126.152.146:8080/devops"
    } 
    stage('Artifacts') {
       if (isUnix()) {
