@@ -25,6 +25,18 @@
 		<jacoco.version>0.7.9</jacoco.version>
 	</properties>
 
+	<distributionManagement>
+		<repository>
+			<id>central</id>
+			<name>releases</name>
+			<url>http://localhost:8080/home/ubuntu/libs-release-local</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshot</id>
+			<name>snapshots</name>
+			<url>http://localhost:8081/home/ubuntu/libs-snapshot-local</url>
+		</snapshotRepository>
+	</distributionManagement>
 
 	<scm>
 		<connection>scm:git:git@github.com:keshavkummari/devops.git</connection>
