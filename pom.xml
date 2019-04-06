@@ -29,12 +29,12 @@
 		<repository>
 			<id>central</id>
 			<name>releases</name>
-			<url>http://35.154.250.148:8081/home/centos/</url>
+			<url>http://35.154.250.148:8081/tmp/</url>
 		</repository>
 		<snapshotRepository>
 			<id>snapshot</id>
 			<name>snapshots</name>
-			<url>http://35.154.250.148:8081/home/centos/</url>
+			<url>http://35.154.250.148:8081/tmp/</url>
 		</snapshotRepository>
 	</distributionManagement>
 
