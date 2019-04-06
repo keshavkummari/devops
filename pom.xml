@@ -29,7 +29,6 @@
 		<repository>
 			<id>central</id>
 			<name>releases</name>
-			#<url>http://localhost/home/centos/devops/target/</url>
 			<url>http://35.154.250.148:8081/home/centos/</url>
 		</repository>
 		<snapshotRepository>
