@@ -25,6 +25,13 @@
 		<jacoco.version>0.7.9</jacoco.version>
 	</properties>
 
+	<properties>
+	  <sonar.projectKey>devsecops01</sonar.projectKey>
+	  <sonar.organization>devopssonar01</sonar.organization>
+	  <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+	  <sonar.login>4f1280d8c260dc269078ed8a906a62ad4a83c877</sonar.login>
+	</properties>
+	
 	<distributionManagement>
     	    <snapshotRepository>
 	        	<id>snapshots</id>
