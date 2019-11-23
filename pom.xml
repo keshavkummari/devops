@@ -34,13 +34,13 @@
     	    <snapshotRepository>
 	        	<id>snapshots</id>
 	        	<name>snapshots</name>
-        		<url>http://13.234.226.250:8081/artifactory/libs-snapshot-local</url>
+        		<url>http://13.233.95.38:8081/artifactory/libs-snapshot-local</url>
 	    </snapshotRepository>
     
 	    <repository>
         	<id>central</id>
 	        <name>releases</name>
-        	<url>http://13.234.226.250:8081/artifactory/libs-release-local</url>
+        	<url>http://13.233.95.38:8081/artifactory/libs-release-local</url>
     	   </repository>
 	
 	</distributionManagement>
