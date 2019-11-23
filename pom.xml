@@ -4,7 +4,7 @@
 
 	<groupId>com.example</groupId>
 	<artifactId>devops</artifactId>
-	<version>1.1.0-SNAPSHOT</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<packaging>war</packaging>
 
 	<name>devops</name>
@@ -24,23 +24,23 @@
 		<surefire.version>2.17</surefire.version>
 		<jacoco.version>0.7.9</jacoco.version>
 
-	  <sonar.projectKey>Intelli</sonar.projectKey>
-	  <sonar.organization>intellipaat</sonar.organization>
-	  <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-	  <sonar.login>7dfffa98f52591a72c3fab91c5fb73193c21769e</sonar.login>
+		  <sonar.projectKey>kummari_edu</sonar.projectKey>
+  		  <sonar.organization>edudevops0001</sonar.organization>
+         	  <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+	          <sonar.login>ef34bb0443af3bd90df2a2b424ec9591c797d023</sonar.login>
 	</properties>
 	
 	<distributionManagement>
     	    <snapshotRepository>
 	        	<id>snapshots</id>
 	        	<name>snapshots</name>
-        		<url>http://15.206.117.224:8081/artifactory/libs-snapshot-local</url>
+        		<url>http://13.234.226.250:8081/artifactory/libs-snapshot-local</url>
 	    </snapshotRepository>
     
 	    <repository>
         	<id>central</id>
 	        <name>releases</name>
-        	<url>http://15.206.117.224:8081/artifactory/libs-release-local</url>
+        	<url>http://13.234.226.250:8081/artifactory/libs-release-local</url>
     	   </repository>
 	
 	</distributionManagement>
