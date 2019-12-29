@@ -44,9 +44,9 @@ node {
       }
    }
    stage('Deploy') {
-       sh 'curl -u admin:redhat@123 -T target/**.war "http://13.233.134.195:8080/manager/text/deploy?path=/devops&update=true"'
+       sh 'curl -u admin:redhat@123 -T target/**.war "http://192.168.0.6:8080/manager/text/deploy?path=/devops&update=true"'
    }
    stage("Smoke Test"){
-       sh "curl --retry-delay 10 --retry 5 http://13.233.134.195:8080/devops"
+       sh "curl --retry-delay 10 --retry 5 http://http://192.168.0.6:8080/devops"
    } 
 }
