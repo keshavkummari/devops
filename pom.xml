@@ -24,23 +24,23 @@
 		<surefire.version>2.17</surefire.version>
 		<jacoco.version>0.7.9</jacoco.version>
 
-		  <sonar.projectKey>kummari_edu</sonar.projectKey>
-  		  <sonar.organization>devops_keshav01</sonar.organization>
-         	  <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-	          <sonar.login>1ea1a70a2587084cd363559535c7863ca609b601</sonar.login>
+		  <sonar.projectKey>slearn1</sonar.projectKey>
+  		  <sonar.organization>slearn1</sonar.organization>
+         	  <sonar.host.url>http://172.31.18.86:9000</sonar.host.url>
+	          <sonar.login>84f54143e194c662308c484288f5c8e8c1f08b71</sonar.login>
 	</properties>
 	
 	<distributionManagement>
     	    <snapshotRepository>
 	        	<id>snapshots</id>
 	        	<name>snapshots</name>
-        		<url>http://18.217.2.142:8082/artifactory/libs-snapshot-local/</url>
+        		<url>http://172.31.18.86:8081/artifactory/libs-snapshot-local/</url>
 	    </snapshotRepository>
     
 	    <repository>
         	<id>central</id>
 	        <name>releases</name>
-        	<url>http://18.217.2.142:8082/artifactory/libs-release-local/</url>
+        	<url>http://172.31.18.86:8081/artifactory/libs-release-local/</url>
     	   </repository>
 	
 	</distributionManagement>
