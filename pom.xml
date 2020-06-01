@@ -29,20 +29,20 @@
 	          <sonar.login>84f54143e194c662308c484288f5c8e8c1f08b71</sonar.login>
 	</properties>
 	
-	<distributionManagement>
-    	    <snapshotRepository>
-	        	<id>snapshots</id>
-	        	<name>snapshots</name>
-        		<url>http://172.31.18.86:8081/artifactory/libs-snapshot</url>
-	    </snapshotRepository>
-    
-	    <repository>
-        	<id>central</id>
-	        <name>releases</name>
-        	<url>http://172.31.18.86:8081/artifactory/libs-release</url>
-    	   </repository>
-	
-	</distributionManagement>
+
+<distributionManagement>
+    <snapshotRepository>
+        <id>snapshots</id>
+        <name>artifactory.codewithckk.com-snapshots</name>
+        <url>http://35.172.217.78:8081/artifactory/libs-snapshot-local</url>
+    </snapshotRepository>
+
+    <repository>
+        <id>central</id>
+        <name>artifactory.codewithckk.com-releases</name>
+        <url>http://35.172.217.78:8081/artifactory/libs-release-local</url>
+    </repository>
+</distributionManagement>
 
 
 	<scm>
