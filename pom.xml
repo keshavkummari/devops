@@ -24,10 +24,21 @@
 		<surefire.version>2.17</surefire.version>
 		<jacoco.version>0.7.9</jacoco.version>
 
+
+	    <sonar.projectKey>devopstest-kesav</sonar.projectKey>
+           <sonar.organization>keshavkummari</sonar.organization>
+  <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+  <sonar.login>74b3e9598883877fb25bb2f61167adb8eba7ca40</sonar.login>
+
+		
+	</properties>
+
+	<!--
 		  <sonar.projectKey>sonar-test</sonar.projectKey>
          	  <sonar.host.url>http://18.221.91.125:9000</sonar.host.url>
 	          <sonar.login>0287a74b82feef6c643edfa5c177519cc06a11c</sonar.login>
-	</properties>
+-->
+	
 	
 <distributionManagement>
     <snapshotRepository>
