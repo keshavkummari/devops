@@ -28,21 +28,21 @@
 		  <sonar.projectKey>awsdevops01</sonar.projectKey>
          	  <sonar.host.url>http://3.236.8.91:9000</sonar.host.url>
 	          <sonar.login>ceb0a50a9abf4afab10a5847da95819efaed1f9a</sonar.login>
-
+-->
 <distributionManagement>
     <snapshotRepository>
         <id>snapshots</id>
-        <name>artifactory.codewithckk.com-snapshots</name>
-        <url>http://35.172.217.78:8081/artifactory/libs-snapshot-local</url>
+        <name>jfrog.codewithkesav.com-snapshots</name>
+        <url>http://3.15.17.225:8081/artifactory/libs-snapshot-local</url>
     </snapshotRepository>
 
     <repository>
         <id>central</id>
-        <name>artifactory.codewithckk.com-releases</name>
-        <url>http://35.172.217.78:8081/artifactory/libs-release-local</url>
+        <name>jfrog.codewithkesav.com-releases</name>
+        <url>http://3.15.17.225:8081/artifactory/libs-release-local</url>
     </repository>
 </distributionManagement>
--->
+	
 	
 	<scm>
 		<connection>scm:git:git@github.com:keshavkummari/devops.git</connection>
