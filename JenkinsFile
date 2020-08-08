@@ -2,6 +2,15 @@ pipeline {
     agent any 
 
     stages {
+        stage('Prepare') { 
+            steps { 
+                git url: 'git@github.com:keshavkummari/devops.git', branch: 'master'
+                mvnHome = tool 'maven'
+             }
+            }
+        }
+        
+    stages {
         stage('Compile') { 
             steps { 
                 withMaven(maven : 'maven'){
