@@ -5,7 +5,6 @@ pipeline {
         stage('Prepare') { 
             steps { 
                 git url: 'git@github.com:keshavkummari/devops.git', branch: 'master'
-                mvnHome = tool 'maven'
              }
             }
         }
