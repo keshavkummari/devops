@@ -9,8 +9,6 @@ pipeline {
                 } 
             }
         }
-    }
-    stages {
         stage('Test the Source Code') { 
             steps { 
                 withMaven(maven : 'maven'){
@@ -18,13 +16,28 @@ pipeline {
                 } 
             }
         }
-     }
-    stages { 
         stage('Package the Source Code'){
             steps {
                 withMaven(maven : 'maven'){
                     sh 'mvn clean package' 
                 }
+            }
+        }
+        stage('Push Artifacts to Artifacts i.e. Nexus/Jfrog') {
+            steps {
+                withMaven(maven : 'maven'){
+                    sh 'mvn deploy'
+                }
+            }
+        }
+        stage('Deploy the Code to Tomcat Application Server') {
+            steps {
+                sh 'curl -u admin:redhat@123 -T target/**.war "http://192.168.0.6:8080/manager/text/deploy?path=/codewithkesav&update=true"'
+            }
+        }
+        stage('Smoke Test - After Code Deploy To Application Server') {
+            steps {
+                sh "curl --retry-delay 10 --retry 5 http://18.217.227.118:8080/codewithkesav"
             }
         }
     }
