@@ -57,5 +57,10 @@ pipeline {
                 } 
             }
         }
+        stage('Stage-9 : Deployment - Deploy a Artifact devworld.war file to Tomcat Server '){
+            steps{
+                sh 'curl -u admin:redhat@123 -T target/**.war "http://3.16.160.151:8080/manager/text/deploy?path=/devworld&update=true"' 
+            }
+        }
     }
 }
