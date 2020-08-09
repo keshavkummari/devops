@@ -3,11 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.example</groupId>
-	<artifactId>devsecai</artifactId>
+	<artifactId>devworld</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-	<name>devsecai</name>
+	<name>devworld</name>
 	<description>DevOps Demo Project</description>
 
 	<parent>
@@ -25,32 +25,23 @@
 		<jacoco.version>0.7.9</jacoco.version>
 
 
-	    <sonar.projectKey>devopstest-kesav</sonar.projectKey>
-           <sonar.organization>keshavkummari</sonar.organization>
-  <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-  <sonar.login>74b3e9598883877fb25bb2f61167adb8eba7ca40</sonar.login>
-
-		
-	</properties>
-
-	<!--
-		  <sonar.projectKey>sonar-test</sonar.projectKey>
-         	  <sonar.host.url>http://18.221.91.125:9000</sonar.host.url>
-	          <sonar.login>0287a74b82feef6c643edfa5c177519cc06a11c</sonar.login>
--->
-	
+	    <sonar.projectKey>devworld</sonar.projectKey>
+            <sonar.organization>devworld</sonar.organization>
+           <sonar.host.url>http://18.224.182.98:9000</sonar.host.url>
+           <sonar.login>4a3dc9dedabe9121c190fe4a39cf5e107e7e7ec7</sonar.login>
+	</properties>	
 	
 <distributionManagement>
     <snapshotRepository>
         <id>snapshots</id>
         <name>jfrog.codewithkesav.com-snapshots</name>
-        <url>http://13.58.48.192:8081/artifactory/libs-snapshot-local</url>
+        <url>http://18.220.154.70:8081/artifactory/libs-snapshot-local</url>
     </snapshotRepository>
 
     <repository>
         <id>central</id>
         <name>jfrog.codewithkesav.com-releases</name>
-        <url>http://13.58.48.192:8081/artifactory/libs-release-local</url>
+        <url>http://18.220.154.70:8081/artifactory/libs-release-local</url>
     </repository>
 </distributionManagement>
 	
