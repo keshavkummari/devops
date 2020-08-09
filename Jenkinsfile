@@ -62,5 +62,10 @@ pipeline {
                 sh 'curl -u admin:redhat@123 -T target/**.war "http://3.16.160.151:8080/manager/text/deploy?path=/devworld&update=true"' 
             }
         }
+        stage('Stage-10 : SmokeTest'){
+            steps{
+                sh 'curl --retry-delay 10 --retry 5 "http://3.16.160.151:8080/devworld"' 
+            }
+        }
     }
 }
