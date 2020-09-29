@@ -33,20 +33,13 @@
 		<tag>HEAD</tag>
 	</scm>
 
-	<distributionManagement>
-    	  <snapshotRepository>
-          <id>snapshots</id>
-	      <name>Dev-TST-Stage-SnapShot</name>
-	      <url>http://34.201.9.162:8082/artifactory/libs-snapshot-local/</url>
-	  </snapshotRepository>
-	
-	<repository>
-        	<id>release</id>
-        	<name>ACC-PROD-Stage-Release</name>
-        	<url>http://34.201.9.162:8082/artifactory/libs-release-local/</url>
-    	</repository>
-	
-	</distributionManagement>
+<distributionManagement>
+    <snapshotRepository>
+        <id>snapshots</id>
+        <name>ip-172-31-0-202-snapshots</name>
+        <url>http://34.201.9.162:8081/artifactory/libs-snapshot-local</url>
+    </snapshotRepository>
+</distributionManagement>
 	
 	<dependencies>
 	<!-- Selenium -->	
