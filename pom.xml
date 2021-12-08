@@ -26,15 +26,17 @@
 	</properties>
 
 	<distributionManagement>
+		<!--
 		<repository>
 			<id>central</id>
 			<name>releases</name>
 			<url>http://localhost:8080/home/ubuntu/libs-release-local</url>
 		</repository>
+	-->
 		<snapshotRepository>
 			<id>snapshot</id>
 			<name>snapshots</name>
-			<url>http://localhost:8080/home/ubuntu/libs-snapshot-local</url>
+			<url>http://52.23.249.250:8082/artifactory/maven-artifacts-hatigen/</url>
 		</snapshotRepository>
 	</distributionManagement>
 
