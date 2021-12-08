@@ -34,8 +34,8 @@
 		</repository>
 	-->
 		<snapshotRepository>
-			<id>snapshot</id>
-			<name>snapshots</name>
+			<id>maven-artifacts-hatigen</id>
+			<name>maven-artifacts-hatigen</name>
 			<url>http://52.23.249.250:8082/artifactory/maven-artifacts-hatigen/</url>
 		</snapshotRepository>
 	</distributionManagement>
