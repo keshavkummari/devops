@@ -42,7 +42,7 @@
 		<snapshotRepository>
 			<id>hatigen-snapshot-jobs</id>
 			<name>hatigen-snapshot-jobs</name>
-			<url>http://54.224.227.166:8082/artifactory/hatigen-snapshot-jobs/</url>
+			<url>http://54.224.239.212:8082/artifactory/hatigen-snapshot-jobs/</url>
 		</snapshotRepository>
 	</distributionManagement>
 
