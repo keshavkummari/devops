@@ -30,22 +30,22 @@
         <sonar.login>68abbb026c64ae5820a974c79dbeed77a9d57be5</sonar.login>
 		-->
 	</properties>
-		<!--
-	<distributionManagement>
 
+	<distributionManagement>
+		<!--
 		<repository>
 			<id>central</id>
 			<name>releases</name>
 			<url>http://localhost:8080/home/ubuntu/libs-release-local</url>
 		</repository>
-	
+	       -->
 		<snapshotRepository>
-			<id>hatigen-snapshot-jobs</id>
-			<name>hatigen-snapshot-jobs</name>
-			<url>http://54.224.239.212:8082/artifactory/hatigen-snapshot-jobs/</url>
+			<id>demo-snapshot-lib</id>
+			<name>demo-snapshot-lib</name>
+			<url>http://34.229.65.225:8082/artifactory/demo-snapshot-lib/</url>
 		</snapshotRepository>
 	</distributionManagement>
--->
+
 	<scm>
 		<connection>scm:git:git@github.com:keshavkummari/devops.git</connection>
 		<developerConnection>scm:git:git@github.com:keshavkummari/devops.git</developerConnection>
