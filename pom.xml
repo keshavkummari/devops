@@ -23,12 +23,12 @@
 		<java.version>1.8</java.version>
 		<surefire.version>3.0.0-M3</surefire.version>
 		<jacoco.version>0.7.9</jacoco.version>
-		<!--
-        <sonar.projectKey>webapp-test01</sonar.projectKey>
-        <sonar.organization>webapp-test01</sonar.organization>
-        <sonar.host.url>http://54.146.23.229:9000</sonar.host.url>
-        <sonar.login>68abbb026c64ae5820a974c79dbeed77a9d57be5</sonar.login>
-		-->
+		
+        <sonar.projectKey>firstdevopsproject</sonar.projectKey>
+        <sonar.organization>firstdevopsproject</sonar.organization>
+        <sonar.host.url>http://35.172.195.91:9000</sonar.host.url>
+        <sonar.login>79f26f53ddbfa867596c56621c6df355d3001264</sonar.login>
+	
 	</properties>
 
 	<distributionManagement>
