@@ -15,6 +15,7 @@ pipeline {
                 } 
             }
         }
+/*
         stage('Stage-3 : Compile') { 
             steps {
                 withMaven(maven : 'maven'){
@@ -50,7 +51,7 @@ pipeline {
                 } 
             }
         }
-        /*
+
         stage('Stage-8 : Deploy an Artifact to Artifactory Manager i.e. Nexus/Jfrog') { 
             steps {
                 withMaven(maven : 'maven'){
