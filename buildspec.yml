@@ -7,6 +7,7 @@ phases:
     commands:
       - cd src/main/resources/static
       - cd $CODEBUILD_SRC_DIR
+      - mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=kk-java
   build:
     commands:
       - echo Build started on `date`
