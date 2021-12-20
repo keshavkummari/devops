@@ -5,6 +5,11 @@ pipeline {
          jdk 'java'
     }
     stages {
+        stage('Stage-0 : Static Code Quality Using SonarQube') { 
+            steps {
+                sh 'mvn sonar:sonar'
+            }
+        }
         stage('Stage-1 : Clean') { 
             steps {
                 sh 'mvn clean'
@@ -47,7 +52,7 @@ pipeline {
         }
           stage('Stage-9 : Deployment - Deploy a Artifact devops-2.0.0-SNAPSHOT.war file to Tomcat Server') { 
             steps {
-                sh 'curl -u admin:redhat@123 -T target/**.war "http://3.16.160.151:8080/manager/text/deploy?path=/devops&update=true"'
+                sh 'curl -u admin:redhat@123 -T target/**.war "http://54.146.36.84:8080/manager/text/deploy?path=/devops&update=true"'
             }
         }
     }
