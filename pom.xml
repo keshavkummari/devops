@@ -23,11 +23,12 @@
 		<java.version>1.8</java.version>
 		<surefire.version>3.0.0-M3</surefire.version>
 		<jacoco.version>0.7.9</jacoco.version>
-		
+	<!--	
         <sonar.projectKey>firstdevopsproject</sonar.projectKey>
         <sonar.organization>firstdevopsproject</sonar.organization>
         <sonar.host.url>http://35.172.195.91:9000</sonar.host.url>
         <sonar.login>79f26f53ddbfa867596c56621c6df355d3001264</sonar.login>
+	-->
 	
 	</properties>
 
@@ -42,7 +43,7 @@
 		<snapshotRepository>
 			<id>demo-snapshot-lib</id>
 			<name>demo-snapshot-lib</name>
-			<url>http://34.229.65.225:8082/artifactory/demo-snapshot-lib/</url>
+			<url>http://3.81.160.68:8082/artifactory/demo-snapshot-lib/</url>
 		</snapshotRepository>
 	</distributionManagement>
 
