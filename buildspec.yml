@@ -7,7 +7,7 @@ phases:
     commands:
       - cd src/main/resources/static
       - cd $CODEBUILD_SRC_DIR
-      - mvn sonar:sonar -DskipTests
+      - mvn sonar:sonar
      # - mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=kk-java
   build:
     commands:
