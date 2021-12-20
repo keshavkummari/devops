@@ -1,1 +1,22 @@
+version: 0.2
 
+phases:
+  pre_build:
+    commands:
+      - echo "Installing HashiCorp Packer..."
+      - curl -qL -o packer.zip https://releases.hashicorp.com/packer/0.12.3/packer_0.12.3_linux_amd64.zip && unzip packer.zip
+      - echo "Installing jq..."
+      - curl -qL -o jq https://stedolan.github.io/jq/download/linux64/jq && chmod +x ./jq
+      - mv packer /usr/local/bin
+      - mv jq /usr/local/bin
+      - pwd
+      - ls -ltr $CODEBUILD_SRC_DIR
+      - cd $CODEBUILD_SRC_DIR/
+      - echo "Validating packer.json"
+      - packer validate packer.json
+  build:
+    commands:
+    
+  post_build:
+    commands:
+    
