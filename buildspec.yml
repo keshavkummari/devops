@@ -1,0 +1,21 @@
+version: 0.2 
+phases:
+  install:
+    runtime-versions:
+      java: corretto8
+  pre_build:
+    commands:
+      - cd src/main/resources/static
+      - npm install bower -g
+      - bower install --allow-root
+      - cd $CODEBUILD_SRC_DIR
+  build:
+    commands:
+      - echo Build started on `date`
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - mvn package
+artifacts:
+  files:
+    - target/devops-SNAPSHOT-2.1.0.war
