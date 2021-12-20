@@ -1,0 +1,54 @@
+{
+    "variables": {
+        "application_name": "codewithck",
+        "application_version": "1.0.0",
+        "region": "us-east-1",
+        "instance_type": "t2.micro",
+        "source_ami": "ami-083654bd07b5da81d",
+        "ami_shared_accounts": "156779398815"
+    },
+    "builders": [
+        {
+            "name":  "{{ user `application_name`}}",
+            "type": "amazon-ebs",
+            "ssh_username": "ubuntu",
+            "force_deregister": "true",
+            "force_delete_snapshot": "true",
+            "associate_public_ip_address": "true",
+            "region":  "{{ user `region` }}",
+            "source_ami": "{{ user `source_ami` }}",
+            "instance_type": "{{ user `instance_type` }}",
+            "ami_name": "{{ user `application_name`}}-{{ user `application_version`}}",
+            "ami_users": "{{ user `ami_shared_accounts`}}",
+            "tags": {
+                "Name": "{{ user `application_name` }}",
+                "CreatedBy": "Packer"
+            },
+            "run_tags": {
+                "Name": "{{ user `application_name` }}",
+                "CreatedBy": "Packer"
+            }
+
+        }
+    ],
+    "provisioners": [
+        {
+            "type": "shell",
+            "inline": [
+                "sudo apt update"
+            ]
+        },
+        {
+            "type": "shell",
+            "inline": [
+                "sudo apt install git curl unzip wget -y"
+            ]
+        },
+        {
+            "type": "shell",
+            "inline": [
+                "sudo apt install ansible -y"
+            ]
+        }
+    ]
+}
