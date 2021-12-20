@@ -16,4 +16,4 @@ phases:
       - mvn package
 artifacts:
   files:
-    - target/devops-2.0.0-SNAPSHOT.war
+    #- target/devops-2.0.0-SNAPSHOT.war
