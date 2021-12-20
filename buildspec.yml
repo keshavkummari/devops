@@ -13,7 +13,7 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
-      - mvn clean
+      - mvn package
 artifacts:
   files:
     - target/devops-2.0.0-SNAPSHOT.war
