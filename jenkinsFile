@@ -20,11 +20,11 @@ pipeline {
                 sh 'mvn compile'
             }
         }
-         stage('Stage-4 : Test') { 
+        /* stage('Stage-4 : Test') { 
             steps {
                 sh 'mvn test'
             }
-        }
+        }*/
           stage('Stage-5 : Install') { 
             steps {
                 sh 'mvn install'
