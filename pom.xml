@@ -41,9 +41,9 @@
 		</repository>
 	       -->
 		<snapshotRepository>
-			<id>demo-snapshot-lib</id>
-			<name>demo-snapshot-lib</name>
-			<url>http://3.81.160.68:8082/artifactory/demo-snapshot-lib/</url>
+			<id>hatigen-snapshot-jobs</id>
+			<name>hatigen-snapshot-jobs</name>
+			<url>http://3.81.160.68:8082/artifactory/hatigen-snapshot-jobs/</url>
 		</snapshotRepository>
 	</distributionManagement>
 
