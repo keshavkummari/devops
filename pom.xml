@@ -34,23 +34,23 @@
 	-->
 	
 	</properties>
-		<!--
+		
 	<distributionManagement>
 
 		<repository>
 			<id>central</id>
 			<name>releases</name>
-			<url>http://localhost:8080/home/ubuntu/libs-release-local</url>
+			<url>http://18.222.130.63:8082/artifactory/softobiz_snapshots/</url>
 		</repository>
 	     
 		<snapshotRepository>
 			<id>hatigen-snapshot-jobs</id>
-			<name>hatigen-snapshot-jobs</name>
+			<name>softobiz_snapshots</name>
 			<url>http://3.81.160.68:8082/artifactory/hatigen-snapshot-jobs/</url>
 		</snapshotRepository>
 
 	</distributionManagement>
-        -->
+        
 	<scm>
 		<connection>scm:git:git@github.com:keshavkummari/devops.git</connection>
 		<developerConnection>scm:git:git@github.com:keshavkummari/devops.git</developerConnection>
