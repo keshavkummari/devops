@@ -34,7 +34,7 @@
 	-->
 	
 	</properties>
-		<!--
+
 	<distributionManagement>
 
 		<repository>
@@ -46,11 +46,11 @@
 		<snapshotRepository>
 			<id>hatigen-snapshot-jobs</id>
 			<name>hatigen-snapshot-jobs</name>
-			<url>http://3.81.160.68:8082/artifactory/hatigen-snapshot-jobs/</url>
+			<url>http://54.166.231.100:8082/artifactory/hatigen-snapshot-jobs/</url>
 		</snapshotRepository>
 
 	</distributionManagement>
-        -->
+
 	<scm>
 		<connection>scm:git:git@github.com:keshavkummari/devops.git</connection>
 		<developerConnection>scm:git:git@github.com:keshavkummari/devops.git</developerConnection>
